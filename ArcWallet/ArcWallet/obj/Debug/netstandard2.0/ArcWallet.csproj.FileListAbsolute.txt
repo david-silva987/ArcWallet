@@ -1,0 +1,14 @@
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.deps.json
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.dll
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ref\ArcWallet.dll
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.pdb
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CoreCompileInputs.cache
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.AssemblyInfoInputs.cache
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.AssemblyInfo.cs
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\XamlC.stamp
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.dll
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.dll
+C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
