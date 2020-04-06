@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "MqeYDi0PzmA8NZO6Z8s8aBISCP8eJKdLDdEqy84aDo8RR8kdw3LLiFLLTTq/Y+xzeuvji+xPZG6jXvBNA+e1vQ==",
+  "dgSpecHash": "vA1YW8SOUOTMjj2Sy55g9pvgLq9o6yqzBiCAa0h8OEdq5KpBl4d2jebPo1XvN2eXihnlwScW45VL0AqIURVG0w==",
   "success": true,
-  "projectFilePath": "C:\\HEARC3\\C#\\Projet_Printemps\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+  "projectFilePath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3.android\\1.1.13\\sqlitepclraw.lib.e_sqlite3.android.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3.android\\1.1.13\\sqlitepclraw.provider.e_sqlite3.android.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",

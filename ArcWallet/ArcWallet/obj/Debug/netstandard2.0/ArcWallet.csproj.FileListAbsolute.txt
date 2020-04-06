@@ -12,3 +12,17 @@ C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\XamlC
 C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.dll
 C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.dll
 C:\HEARC3\C#\Projet_Printemps\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.deps.json
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ref\ArcWallet.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.pdb
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.AssemblyInfoInputs.cache
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.AssemblyInfo.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CoreCompileInputs.cache
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\XamlC.stamp
