@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArcWallet.addExpenditure"
+             Title="Ajouter une dépense">
+    <StackLayout Margin="20,35,20,20">
+        
+        <Label>Lieu</Label>
+        <Entry x:Name="locationEntry"
+               Placeholder="Saisissez le lieu de la dépense" />
+
+        <Label>Catégorie</Label>
+        <Picker x:Name="categoryEntry" 
+                Title="Selectionner une catégorie" 
+                TitleColor="green">
+            <Picker.Items>
+                <x:String>Courses</x:String>
+                <x:String>Restaurants</x:String>
+                <x:String>Diverissement</x:String>
+                <x:String>Transport</x:String>
+                <x:String>Santé</x:String>
+                <x:String>Voyage</x:String>
+                <x:String>Autre</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label>Date</Label>
+        <DatePicker x:Name="dateEntry"/>
+
+        <Label>Heure</Label>
+        <TimePicker x:Name="timeEntry"/>
+
+        <Label>Montant</Label>
+        <Entry x:Name="AmoutEntry"
+               Placeholder="Le montant de la dépense" />
+
+        <Button Text="Ajouter la dépense"
+                Clicked="addExpenditureButton" />
+
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="{Binding Location}"
+                                HorizontalOptions="Start"
+                                TextColor="#b35e20" />
+              
+
+                                <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#f35e20" />
+
+                                <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#f35e20" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

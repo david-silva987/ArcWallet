@@ -9,11 +9,15 @@
                Placeholder="Enter age" />
         <Button Text="Add to Database"
                 Clicked="OnButtonClicked" />
+
+        <Button Text="Ajouter Depense"
+                Clicked="OnButtonAdd" />
         <ListView x:Name="listView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"
-                              Detail="{Binding Age}" />
+                              Detail="{Binding Date} { Binding Age}"
+                             />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
