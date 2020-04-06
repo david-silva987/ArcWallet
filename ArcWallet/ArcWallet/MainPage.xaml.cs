@@ -27,7 +27,7 @@ namespace ArcWallet
         {
             if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ageEntry.Text))
             {
-                await App.Database.SavePersonAsync(new Person
+                await App.Database.SavePersonAsync(new User
                 {
                     Name = nameEntry.Text,
                     Age = int.Parse(ageEntry.Text)

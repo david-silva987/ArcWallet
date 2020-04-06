@@ -2,7 +2,7 @@
 
 namespace ArcWallet
 {
-    public class Person
+    public class User
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

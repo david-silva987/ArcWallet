@@ -13,17 +13,29 @@ namespace ArcWallet
         public Database(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Person>().Wait();
+            _database.CreateTableAsync<User>().Wait();
+            _database.CreateTableAsync<Revenue>().Wait();
+            _database.CreateTableAsync<Expenditure>().Wait();
         }
 
-        public Task<List<Person>> GetPeopleAsync()
+        public Task<List<User>> GetUserAsync()
         {
-            return _database.Table<Person>().ToListAsync();
+            return _database.Table<User>().ToListAsync();
         }
 
-        public Task<int> SavePersonAsync(Person person)
+        public Task<List<Revenue>> GetRevenueAsync()
         {
-            return _database.InsertAsync(person);
+            return _database.Table<Revenue>().ToListAsync();
+        }
+
+        public Task<List<Expenditure>> GetExpenditureAsync()
+        {
+            return _database.Table<Expenditure>().ToListAsync();
+        }
+
+        public Task<int> SavePersonAsync(User user)
+        {
+            return _database.InsertAsync(user);
         }
     }
 }
