@@ -16,5 +16,12 @@ namespace ArcWallet
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            listViewRevenu.ItemsSource = await App.Database.GetBiggestRevenuAsync();
+            listViewDepense.ItemsSource = await App.Database.GetBiggestDepenseAsync();
+        }
     }
 }

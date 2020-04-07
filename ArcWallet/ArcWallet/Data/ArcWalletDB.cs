@@ -27,7 +27,14 @@ namespace ArcWallet
         {
             return _database.Table<Revenue>().ToListAsync();
         }
-
+        public Task<List<Revenue>> GetBiggestRevenuAsync()
+        {
+            return _database.Table<Revenue>().OrderByDescending(x => x.Amount).Take(1).ToListAsync();
+        }
+        public Task<List<Expenditure>> GetBiggestDepenseAsync()
+        {
+            return _database.Table<Expenditure>().OrderByDescending(x => x.Amount).Take(1).ToListAsync();
+        }
         public Task<List<Expenditure>> GetExpenditureAsync()
         {
             return _database.Table<Expenditure>().ToListAsync();
