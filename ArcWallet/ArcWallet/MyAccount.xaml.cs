@@ -22,6 +22,8 @@ namespace ArcWallet
             base.OnAppearing();
             listViewRevenu.ItemsSource = await App.Database.GetBiggestRevenuAsync();
             listViewDepense.ItemsSource = await App.Database.GetBiggestDepenseAsync();
+            totalRevenus.Text = await App.Database.GetAllRevenus();
+            totalExpenditures.Text = await App.Database.GetAllExpenditures();
         }
     }
 }

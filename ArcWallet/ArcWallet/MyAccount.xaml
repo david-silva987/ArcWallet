@@ -64,6 +64,15 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Label>Total des revenus</Label>
+            <Label x:Name="totalRevenus" Text="{Binding Amount}"
+                                HorizontalOptions="Start"
+                                TextColor="Green" />
+            <Label>Total des dépenses</Label>
+            <Label x:Name="totalExpenditures" Text="{Binding Amount}"
+                                HorizontalOptions="Start"
+                                TextColor="Red" />
         </StackLayout>
   </ContentPage.Content>
 </ContentPage>
