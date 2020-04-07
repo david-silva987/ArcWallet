@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArcWallet.AjouterRevenu"
+             Title="Ajouter un revenu">
+    <StackLayout Margin="20,35,20,20">
+
+        <Label>Nom</Label>
+        <Entry x:Name="nameEntry"
+               Placeholder="Saisissez le nom du revenu" />
+
+        <Label>Type de revenu</Label>
+        <Picker x:Name="categoryEntry" 
+                Title="Selectionner une catégorie" 
+                TitleColor="green">
+            <Picker.Items>
+                <x:String>Permanent</x:String>
+                <x:String>Unique</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label>Date</Label>
+        <DatePicker x:Name="dateEntry"/>
+
+        <Label>Montant</Label>
+        <Entry Keyboard="Numeric" x:Name="AmoutEntry"
+               Placeholder="Le montant du revenu" />
+
+        <Button Text="Ajouter le revenu"
+                Clicked="addRevenuButton" />
+
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="{Binding Name}"
+                                HorizontalOptions="Start"
+                                TextColor="#b35e20" />
+
+
+                                <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#f35e20" />
+
+                                <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#f35e20" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

@@ -24,7 +24,7 @@ namespace ArcWallet
         {
             InitializeComponent();
 
-            MainPage = new addExpenditure();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

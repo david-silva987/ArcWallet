@@ -1,25 +1,54 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ArcWallet.MainPage">
-    <StackLayout Margin="20,35,20,20">
-        <Entry x:Name="nameEntry"
-               Placeholder="Enter name" />
-        <Entry x:Name="ageEntry"
-               Placeholder="Enter age" />
-        <Button Text="Add to Database"
-                Clicked="OnButtonClicked" />
+             x:Class="ArcWallet.MainPage"
+             xmlns:pages="clr-namespace:ArcWallet">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"
+                 BackgroundColor="#e8e8e8">
 
-        <Button Text="Ajouter Depense"
-                Clicked="OnButtonAdd" />
-        <ListView x:Name="listView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}"
-                              Detail="{Binding Date} { Binding Age}"
-                             />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-</ContentPage>
+            <StackLayout Orientation="Vertical">
+
+
+                <ListView x:Name="navigationDrawerList"
+                  RowHeight="55"
+                  SeparatorVisibility="Default"
+                  BackgroundColor="#e8e8e8"
+                  ItemSelected="OnMenuItemSelected">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <!-- Main design for our menu items -->
+                                <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20">
+
+                                    <Image Source="{Binding Icon}"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         VerticalOptions="Start" />
+
+                                    <Label Text="{Binding Title}"
+                         FontSize="Small"
+                         VerticalOptions="End"
+                         TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

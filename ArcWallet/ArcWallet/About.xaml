@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.About">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="Application créée  par Alfred Robin, da Silva David et Peiris Sébastien dans le cadre du cours .NET suivi par Olivier Hüsser." />
+            <Label Text="ArcWallet permet d'avoir un porte monnaie virtuel avec un suivi de vos dépenses/revenus." />
+            <Image Source="logo_ing.png" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

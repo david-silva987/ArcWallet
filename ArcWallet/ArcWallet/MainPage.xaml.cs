@@ -11,51 +11,46 @@ namespace ArcWallet
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
+
+        public List<MainMenuItem> menuList { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
+
+            menuList = new List<MainMenuItem>();
+
+            var pageMyAccount = new MainMenuItem() { Title = "My account", Icon = "ic_local_shipping.png", TargetType = typeof(MyAccount) };
+            var pageAbout = new MainMenuItem() { Title = "About", Icon = "baseline_info_black_18dp.png", TargetType = typeof(About) };
+            var pageDepense = new MainMenuItem() { Title = "Ajouter dépense", Icon = "baseline_info_black_18dp.png", TargetType = typeof(addExpenditure) };
+            var pageRevenu = new MainMenuItem() { Title = "Ajouter revenu", Icon = "baseline_info_black_18dp.png", TargetType = typeof(AjouterRevenu) };
+
+            //need to change the icons!
+
+            menuList.Add(pageMyAccount);
+            menuList.Add(pageAbout);
+            menuList.Add(pageDepense);
+            menuList.Add(pageRevenu);
+
+            navigationDrawerList.ItemsSource = menuList;
+
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(MyAccount)));
+
+
+
         }
-        protected override async void OnAppearing()
+
+        private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetUserAsync();
+
+            var item = (MainMenuItem)e.SelectedItem;
+            Type page = item.TargetType;
+            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+            IsPresented = false;
         }
-
-        async void OnButtonClicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ageEntry.Text))
-            {
-                await App.Database.SavePersonAsync(new User
-                {
-                    Name = nameEntry.Text,
-                    Age = int.Parse(ageEntry.Text),
-                    Date = DateTime.Now.ToString("dd/mm/yyyy HH:mm:ss")
-                });
-
-                nameEntry.Text = ageEntry.Text = string.Empty;
-                listView.ItemsSource = await App.Database.GetUserAsync();
-            }
-        }
-
-
-        async void OnButtonAdd(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ageEntry.Text))
-            {
-                await App.Database.SavePersonAsync(new User
-                {
-                    Name = nameEntry.Text,
-                    Age = int.Parse(ageEntry.Text),
-                    Date = DateTime.Now.ToString("dd/mm/yyyy HH:mm:ss")
-                });
-
-                nameEntry.Text = ageEntry.Text = string.Empty;
-                listView.ItemsSource = await App.Database.GetUserAsync();
-            }
-        }
-        
+       
 
     }
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.Depense">
+  <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter name" />
+        <Entry x:Name="ageEntry"
+               Placeholder="Enter age" />
+        <Button Text="Add to Database"
+                Clicked="OnButtonClicked" />
+
+        <Button Text="Ajouter Depense"
+                Clicked="OnButtonAdd" />
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Date} { Binding Age}"
+                             />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

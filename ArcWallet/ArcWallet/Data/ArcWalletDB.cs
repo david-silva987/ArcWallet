@@ -42,5 +42,9 @@ namespace ArcWallet
         {
             return _database.InsertAsync(expenditure);
         }
+        public Task<int> SaveRevenuAsycn(Revenue revenu)
+        {
+            return _database.InsertAsync(revenu);
+        }
     }
 }

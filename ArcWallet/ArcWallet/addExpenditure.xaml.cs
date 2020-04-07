@@ -26,11 +26,11 @@ namespace ArcWallet
 
         async void addExpenditureButton(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(locationEntry.Text) && !string.IsNullOrWhiteSpace(AmoutEntry.Text))
+            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(AmoutEntry.Text))
             {
                 await App.Database.SaveExpenditureAsync(new Expenditure
                 {
-                    Location = locationEntry.Text,
+                    Name = nameEntry.Text,
                     Category = categoryEntry.SelectedItem.ToString(),
                     Date = dateEntry.Date.ToString(),
                     Time = timeEntry.Time.ToString(),
@@ -38,7 +38,7 @@ namespace ArcWallet
 
                 });
 
-                locationEntry.Text = AmoutEntry.Text = string.Empty;
+                nameEntry.Text = AmoutEntry.Text = string.Empty;
                 listView.ItemsSource = await App.Database.GetExpenditureAsync();
             }
         }
