@@ -22,10 +22,10 @@ namespace ArcWallet
 
             menuList = new List<MainMenuItem>();
 
-            var pageMyAccount = new MainMenuItem() { Title = "My account", Icon = "ic_local_shipping.png", TargetType = typeof(MyAccount) };
-            var pageAbout = new MainMenuItem() { Title = "About", Icon = "baseline_info_black_18dp.png", TargetType = typeof(About) };
-            var pageDepense = new MainMenuItem() { Title = "Ajouter dépense", Icon = "baseline_info_black_18dp.png", TargetType = typeof(addExpenditure) };
-            var pageRevenu = new MainMenuItem() { Title = "Ajouter revenu", Icon = "baseline_info_black_18dp.png", TargetType = typeof(AjouterRevenu) };
+            var pageMyAccount = new MainMenuItem() { Title = "My account", Icon = "wallet.png", TargetType = typeof(MyAccount) };
+            var pageAbout = new MainMenuItem() { Title = "About", Icon = "info.png", TargetType = typeof(About) };
+            var pageDepense = new MainMenuItem() { Title = "Ajouter dépense", Icon = "money_out.png", TargetType = typeof(addExpenditure) };
+            var pageRevenu = new MainMenuItem() { Title = "Ajouter revenu", Icon = "money_in.png", TargetType = typeof(AjouterRevenu) };
 
             //need to change the icons!
 

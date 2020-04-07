@@ -1461,3 +1461,7 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_C
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\info.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\wallet.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\money_in.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\money_out.png
