@@ -19,7 +19,6 @@ namespace ArcWallet
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetRevenueAsync();
         }
 
 
@@ -44,7 +43,8 @@ namespace ArcWallet
                 }) ;
 
                 nameEntry.Text = AmoutEntry.Text = string.Empty;
-                listView.ItemsSource = await App.Database.GetRevenueAsync();
+                await Navigation.PushAsync(new TabbedMyAccount());
+
             }
         }
     }

@@ -37,6 +37,7 @@ namespace ArcWallet
                 });
 
                 nameEntry.Text = AmoutEntry.Text = string.Empty;
+                await Navigation.PushAsync(new TabbedMyAccount());
             }
         }
     }

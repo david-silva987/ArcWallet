@@ -29,33 +29,7 @@
         <Button Text="Ajouter le revenu"
                 Clicked="addRevenuButton" />
 
-        <ListView x:Name="listView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-
-                                <Label Text="{Binding Name}"
-                                HorizontalOptions="Start"
-                                TextColor="#b35e20" />
-
-
-                                <Label Text="{Binding Amount}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#f35e20" />
-
-                                <Label Text="CHF"
-                                HorizontalOptions="End"
-                                TextColor="#f35e20" />
-
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+       
 
     </StackLayout>
 
