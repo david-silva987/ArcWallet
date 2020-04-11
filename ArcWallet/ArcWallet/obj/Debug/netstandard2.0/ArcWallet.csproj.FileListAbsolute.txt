@@ -31,7 +31,6 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcW
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ref\ArcWallet.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.pdb
-C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\addExpenditure.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
@@ -43,6 +42,9 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcW
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\About.xaml.g.cs
-C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Depense.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MyAccount.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\AjouterRevenu.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageDepense.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\TabbedPage.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageRevenus.xaml.g.cs

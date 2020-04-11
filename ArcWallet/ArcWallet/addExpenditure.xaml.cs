@@ -20,7 +20,6 @@ namespace ArcWallet
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetExpenditureAsync();
         }
 
 
@@ -33,13 +32,11 @@ namespace ArcWallet
                     Name = nameEntry.Text,
                     Category = categoryEntry.SelectedItem.ToString(),
                     Date = dateEntry.Date.ToString(),
-                    Time = timeEntry.Time.ToString(),
                     Amount = float.Parse(AmoutEntry.Text),
 
                 });
 
                 nameEntry.Text = AmoutEntry.Text = string.Empty;
-                listView.ItemsSource = await App.Database.GetExpenditureAsync();
             }
         }
     }

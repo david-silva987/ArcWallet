@@ -16,7 +16,7 @@
             <Picker.Items>
                 <x:String>Courses</x:String>
                 <x:String>Restaurants</x:String>
-                <x:String>Diverzissement</x:String>
+                <x:String>Divertissement</x:String>
                 <x:String>Transport</x:String>
                 <x:String>Santé</x:String>
                 <x:String>Voyage</x:String>
@@ -27,43 +27,12 @@
         <Label>Date</Label>
         <DatePicker x:Name="dateEntry"/>
 
-        <Label>Heure</Label>
-        <TimePicker x:Name="timeEntry"/>
-
         <Label>Montant</Label>
         <Entry Keyboard="Numeric" x:Name="AmoutEntry"
                Placeholder="Le montant de la dépense" />
 
         <Button Text="Ajouter la dépense"
                 Clicked="addExpenditureButton" />
-
-        <ListView x:Name="listView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-
-                                <Label Text="{Binding Name}"
-                                HorizontalOptions="Start"
-                                TextColor="#b35e20" />
-              
-
-                                <Label Text="{Binding Amount}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#f35e20" />
-
-                                <Label Text="CHF"
-                                HorizontalOptions="End"
-                                TextColor="#f35e20" />
-
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
     </StackLayout>
 

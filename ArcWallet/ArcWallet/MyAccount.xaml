@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ArcWallet.MyAccount">
+             x:Class="ArcWallet.MyAccount" Title="MON COMPTE">
   <ContentPage.Content>
       <StackLayout>
           <Label Text="Statistiques" />

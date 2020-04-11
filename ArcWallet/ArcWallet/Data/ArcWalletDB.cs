@@ -25,7 +25,7 @@ namespace ArcWallet
 
         public Task<List<Revenue>> GetRevenueAsync()
         {
-            return _database.Table<Revenue>().ToListAsync();
+            return _database.Table<Revenue>().OrderBy(x => x.Date).ToListAsync();
         }
         public Task<List<Revenue>> GetBiggestRevenuAsync()
         {
@@ -48,7 +48,7 @@ namespace ArcWallet
         }
         public Task<List<Expenditure>> GetExpenditureAsync()
         {
-            return _database.Table<Expenditure>().ToListAsync();
+            return _database.Table<Expenditure>().OrderBy(x=> x.Date).ToListAsync();
         }
 
         public Task<int> SavePersonAsync(User user)
