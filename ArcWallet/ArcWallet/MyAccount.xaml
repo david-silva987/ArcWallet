@@ -7,7 +7,9 @@
              x:Class="ArcWallet.MyAccount" Title="MON COMPTE">
   <ContentPage.Content>
       <StackLayout>
-          <Label Text="Statistiques" />
+            <Label>Votre solde actuel est de </Label>
+            <Label x:Name="balanceLabel" Text="{Binding Balance}"/>
+            <Label Text="Statistiques" />
             <Label Text="Plus gros revenu"></Label>
             <ListView x:Name="listViewRevenu">
                 <ListView.ItemTemplate>
@@ -20,7 +22,6 @@
                                     <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"
                                 TextColor="#b35e20" />
-
 
                                     <Label Text="{Binding Amount}"
                                 HorizontalOptions="EndAndExpand"

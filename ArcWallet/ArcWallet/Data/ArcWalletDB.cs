@@ -42,6 +42,7 @@ namespace ArcWallet
         {
             return _database.ExecuteScalarAsync<string>("SELECT SUM(Amount) FROM Expenditure WHERE Amount > 0");
         }
+
         public Task<List<Expenditure>> GetBiggestDepenseAsync()
         {
             return _database.Table<Expenditure>().OrderByDescending(x => x.Amount).Take(1).ToListAsync();
