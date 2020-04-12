@@ -17,6 +17,12 @@ namespace ArcWallet
             InitializeComponent();
         }
 
+        async void addMouvementButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AjouterMouvement());
+
+        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();

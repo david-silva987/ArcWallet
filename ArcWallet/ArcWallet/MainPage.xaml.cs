@@ -24,15 +24,15 @@ namespace ArcWallet
 
             var pageMyAccount = new MainMenuItem() { Title = "My account", Icon = "wallet.png", TargetType = typeof(TabbedMyAccount) };
             var pageAbout = new MainMenuItem() { Title = "About", Icon = "info.png", TargetType = typeof(About) };
-            var pageDepense = new MainMenuItem() { Title = "Ajouter dépense", Icon = "money_out.png", TargetType = typeof(addExpenditure) };
-            var pageRevenu = new MainMenuItem() { Title = "Ajouter revenu", Icon = "money_in.png", TargetType = typeof(AjouterRevenu) };
+            //var pageDepense = new MainMenuItem() { Title = "Ajouter dépense", Icon = "money_out.png", TargetType = typeof(addExpenditure) };
+            //var pageRevenu = new MainMenuItem() { Title = "Ajouter revenu", Icon = "money_in.png", TargetType = typeof(AjouterRevenu) };
 
             //need to change the icons!
 
             menuList.Add(pageMyAccount);
             menuList.Add(pageAbout);
-            menuList.Add(pageDepense);
-            menuList.Add(pageRevenu);
+           // menuList.Add(pageDepense);
+            //menuList.Add(pageRevenu);
 
             navigationDrawerList.ItemsSource = menuList;
 

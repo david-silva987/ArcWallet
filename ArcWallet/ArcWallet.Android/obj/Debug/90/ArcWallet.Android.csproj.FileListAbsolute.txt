@@ -1465,3 +1465,4 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\draw
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\wallet.png
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\money_in.png
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\money_out.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\plus.png
