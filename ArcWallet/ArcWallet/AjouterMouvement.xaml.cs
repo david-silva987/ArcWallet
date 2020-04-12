@@ -19,20 +19,39 @@ namespace ArcWallet
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+
         }
 
-
-        async void addMouvementButton(object sender, EventArgs e)
+        public void mouvementEntry_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ordre = 0;
+
+            var picker = sender as Picker;
+            if(picker.Items[picker.SelectedIndex].Equals("Dépense"))
+            {
+                categoryEntry.IsVisible = true;
+                labelCategory.IsVisible = true;
+            }
+            else
+            {
+                categoryEntry.IsVisible = false;
+                labelCategory.IsVisible = false;
+            }
+        }
+
+            async void addMouvementButton(object sender, EventArgs e)
+        {
+            /*int ordre = 0;
             if (categoryEntry.SelectedItem.ToString().Equals("Permanent"))
             {
                 ordre = 1;
-            }
+            }*/
 
 
             if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(AmoutEntry.Text))
             {
+                Console.WriteLine(mouvementEntry.SelectedItem.ToString());
+                Console.ReadLine();
                 if (mouvementEntry.SelectedItem.ToString().Equals("Dépense"))
                 {
                     await App.Database.SaveExpenditureAsync(new Expenditure
@@ -49,7 +68,7 @@ namespace ArcWallet
                         await App.Database.SaveRevenuAsycn(new Revenue
                         {
                             Name = nameEntry.Text,
-                            Permanent = ordre,
+                            //Permanent = ordre,
                             Date = dateEntry.Date.ToString(),
                             Amount = float.Parse(AmoutEntry.Text),
 
@@ -63,5 +82,6 @@ namespace ArcWallet
                 
             }
         }
+
     }
 }
