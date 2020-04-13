@@ -7,7 +7,7 @@
              x:Class="ArcWallet.PageRevenus" Title="REVENUS">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listView">
+            <ListView ItemTapped="ItemTapped" x:Name="listView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -21,5 +21,17 @@ namespace ArcWallet
             base.OnAppearing();
             listView.ItemsSource = await App.Database.GetRevenueAsync();
         }
+
+        private async void ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            bool answer = await DisplayAlert("Action", "Que souhaitez-vous faire?", "Modifier", "Supprimer"); //true ->modifier ,false ->supprimer
+            var content = e.Item as Revenue;
+            Console.WriteLine(content.ID);
+            if (!answer)
+            {
+                await App.Database.RemoveRevenu(content.ID);
+                listView.ItemsSource = await App.Database.GetRevenueAsync();
+            }
+        }
     }
 }
