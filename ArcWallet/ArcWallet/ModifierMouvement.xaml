@@ -9,7 +9,7 @@
 
     <StackLayout Margin="20,35,20,20">
 
-        <Label>Type de mouvement</Label>
+        <Label x:Name="labelMouvementEntry">Type de mouvement</Label>
         <Picker SelectedIndexChanged="mouvementEntry_SelectedIndexChanged" x:Name="mouvementEntry" 
                 Title="Selectionner une catégorie" 
                 TitleColor="green">
@@ -23,8 +23,8 @@
         <Entry x:Name="nameEntry"
                Placeholder="Saisissez le nom" />
 
-        <Label x:Name="labelCategory" IsVisible="False">Type de dépense</Label>
-        <Picker IsVisible="False" x:Name="categoryEntry" 
+        <Label x:Name="labelCategory" >Type de dépense</Label>
+        <Picker  x:Name="categoryEntry" 
                 Title="Selectionner une catégorie" 
                 TitleColor="green">
             <Picker.Items>

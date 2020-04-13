@@ -49,3 +49,4 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Page
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\AjouterMouvement.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\Xamarin.Android.Support.v7.AppCompat.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CopyComplete
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ModifierMouvement.xaml.g.cs
