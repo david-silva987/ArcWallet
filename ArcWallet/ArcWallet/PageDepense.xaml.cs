@@ -30,7 +30,7 @@ namespace ArcWallet
             if(!answer)
             {
                 await App.Database.RemoveExpenditure(content.ID);
-                //await Navigation.PushAsync(new TabbedPage());
+                listView.ItemsSource = await App.Database.GetExpenditureAsync();
             }
         }
 
