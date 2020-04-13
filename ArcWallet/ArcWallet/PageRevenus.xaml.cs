@@ -32,6 +32,11 @@ namespace ArcWallet
                 await App.Database.RemoveRevenu(content.ID);
                 listView.ItemsSource = await App.Database.GetRevenueAsync();
             }
+            else
+            {
+                await Navigation.PushAsync(new ModifierMouvement(content));
+
+            }
         }
     }
 }

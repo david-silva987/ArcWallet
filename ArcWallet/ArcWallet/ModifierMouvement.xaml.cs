@@ -13,6 +13,7 @@ namespace ArcWallet
     public partial class ModifierMouvement : ContentPage
     {
         Expenditure expenditure = new Expenditure();
+        Revenue revenue = new Revenue();
         public ModifierMouvement()
         {
             InitializeComponent();
@@ -39,14 +40,11 @@ namespace ArcWallet
 
             this.expenditure = mouvement;
 
-
-            
-            
-
             Console.WriteLine();
             InitializeComponent();
-            mouvementEntry.IsVisible = false;
-            labelMouvementEntry.IsVisible = false;
+            mouvementEntry.IsEnabled = false;
+            labelMouvementEntry.IsEnabled = false;
+            mouvementEntry.SelectedIndex = 0;
             nameEntry.Text = expenditure.Name;
             dateEntry.Date = DateTime.Parse(expenditure.Date);
             AmoutEntry.Text = expenditure.Amount.ToString();
@@ -60,6 +58,28 @@ namespace ArcWallet
                 categoryEntry.SelectedIndex = 1;
 
             }
+        }
+
+        public ModifierMouvement(Revenue mouvement)
+        {
+
+            this.revenue = mouvement;
+
+            Console.WriteLine();
+            InitializeComponent();
+            mouvementEntry.IsEnabled = false;
+            labelMouvementEntry.IsEnabled = false;
+            mouvementEntry.SelectedIndex = 1;
+
+            categoryEntry.IsVisible = false;
+            labelCategory.IsVisible = false;
+
+            nameEntry.Text = revenue.Name;
+            dateEntry.Date = DateTime.Parse(revenue.Date);
+            AmoutEntry.Text = revenue.Amount.ToString();
+
+
+
         }
 
         async void modifyMouvementButton(object sender, EventArgs e)
@@ -82,16 +102,30 @@ namespace ArcWallet
                         expenditure.Category,
                         expenditure.Date,
                         expenditure.Amount);*/
-
-            await App.Database.UpdateExpenditure(new Expenditure
+            if (mouvementEntry.SelectedItem.ToString().Equals("Dépense"))
             {
-                ID = expenditure.ID,
-                Name = nameEntry.Text,
-                Category = categoryEntry.SelectedItem.ToString(),
-                Date = dateEntry.Date.ToString(),
-                Amount = float.Parse(AmoutEntry.Text),
+                await App.Database.UpdateExpenditure(new Expenditure
+                {
+                    ID = expenditure.ID,
+                    Name = nameEntry.Text,
+                    Category = categoryEntry.SelectedItem.ToString(),
+                    Date = dateEntry.Date.ToString(),
+                    Amount = float.Parse(AmoutEntry.Text),
 
-            }) ;
+                });
+            }
+            else
+            {
+                await App.Database.UpdateRevenue(new Revenue
+                {
+                    ID = revenue.ID,
+                    Name = nameEntry.Text,
+                    Date = dateEntry.Date.ToString(),
+                    Amount = float.Parse(AmoutEntry.Text),
+
+                });
+            }
+              
 
             await Navigation.PushAsync(new TabbedMyAccount());
 

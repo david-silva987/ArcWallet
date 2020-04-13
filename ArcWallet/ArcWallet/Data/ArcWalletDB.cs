@@ -85,5 +85,10 @@ namespace ArcWallet
         {
             return _database.UpdateAsync(expenditure);
         }
+
+        public Task<int> UpdateRevenue(Revenue revenue)
+        {
+            return _database.UpdateAsync(revenue);
+        }
     }
 }
