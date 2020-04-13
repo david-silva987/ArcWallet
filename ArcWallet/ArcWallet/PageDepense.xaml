@@ -7,10 +7,11 @@
              x:Class="ArcWallet.PageDepense" Title="DEPENSES">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listView">
+            <ListView ItemTapped="ItemTapped" x:Name="listView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+
                             <StackLayout BackgroundColor="#ffcccb"
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">

@@ -65,5 +65,11 @@ namespace ArcWallet
         {
             return _database.InsertAsync(revenu);
         }
+
+        public Task<string> RemoveExpenditure(int id)
+        {
+            return _database.ExecuteScalarAsync<string>("DELETE FROM Expenditure WHERE id ="+id);
+
+        }
     }
 }
