@@ -31,10 +31,10 @@ namespace ArcWallet
             totalRevenus.Text = await App.Database.GetAllRevenus();
             totalExpenditures.Text = await App.Database.GetAllExpenditures();
 
-            float totRevenus = float.Parse(totalRevenus.Text);
+            /*float totRevenus = float.Parse(totalRevenus.Text);
             float totDepenses = float.Parse(totalExpenditures.Text);
             float solde = totRevenus - totDepenses;
-            balanceLabel.Text = solde.ToString();
+            balanceLabel.Text = solde.ToString();*/
            
         }
     }
