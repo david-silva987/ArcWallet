@@ -18,7 +18,7 @@ namespace ArcWallet
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetExpenditureAsync();
+           // listView.ItemsSource = await App.Database.GetExpenditureAsync();
 
         }
 
@@ -30,7 +30,7 @@ namespace ArcWallet
             if(!answer)
             {
                 await App.Database.RemoveExpenditure(content.ID);
-                listView.ItemsSource = await App.Database.GetExpenditureAsync();
+                //listView.ItemsSource = await App.Database.GetExpenditureAsync();
             }
             else
             {

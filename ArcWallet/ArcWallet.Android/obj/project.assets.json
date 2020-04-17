@@ -2107,24 +2107,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\": {},
+    "C:\\Users\\Robin\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+      "projectUniqueName": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
       "projectName": "ArcWallet.Android",
-      "projectPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
-      "packagesPath": "C:\\Users\\david.dasilva1\\.nuget\\packages\\",
-      "outputPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
+      "projectPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+      "packagesPath": "C:\\Users\\Robin\\.nuget\\packages\\",
+      "outputPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\david.dasilva1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Robin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2138,8 +2138,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
-              "projectPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
+            "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
+              "projectPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
             }
           }
         }

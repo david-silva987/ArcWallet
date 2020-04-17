@@ -26,7 +26,6 @@ C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.d
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CoreCompileInputs.cache
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\XamlC.stamp
-C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\addExpenditure.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.deps.json
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ref\ArcWallet.dll
@@ -50,3 +49,14 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Ajou
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\Xamarin.Android.Support.v7.AppCompat.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CopyComplete
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ModifierMouvement.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\Xamarin.Android.Support.v7.AppCompat.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\About.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\AjouterMouvement.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ModifierMouvement.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MyAccount.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageDepense.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageRevenus.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\TabbedPage.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CopyComplete
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\addTransaction.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\UpdateTransaction.xaml.g.cs

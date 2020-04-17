@@ -54,25 +54,11 @@ namespace ArcWallet
                 Console.ReadLine();
                 if (mouvementEntry.SelectedItem.ToString().Equals("Dépense"))
                 {
-                    await App.Database.SaveExpenditureAsync(new Expenditure
-                    {
-                        Name = nameEntry.Text,
-                        Category = categoryEntry.SelectedItem.ToString(),
-                        Date = dateEntry.Date.ToString(),
-                        Amount = float.Parse(AmoutEntry.Text),
-
-                    });
+                  
                 }
                  else
                     {
-                        await App.Database.SaveRevenuAsycn(new Revenue
-                        {
-                            Name = nameEntry.Text,
-                            //Permanent = ordre,
-                            Date = dateEntry.Date.ToString(),
-                            Amount = float.Parse(AmoutEntry.Text),
-
-                        });
+                     
                     }
 
 

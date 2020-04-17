@@ -15,10 +15,10 @@ namespace ArcWallet
         public TabbedMyAccount()
         {
             InitializeComponent();
-            Children.Add(new PageDepense());
             Children.Add(new MyAccount());
+            Children.Add(new PageDepense());
             Children.Add(new PageRevenus());
-            CurrentPage = Children[1];
+            CurrentPage = Children[0];
         }
     }
 }

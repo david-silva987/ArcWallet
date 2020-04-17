@@ -2,78 +2,54 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converters="clr-namespace:ArcWallet"
              mc:Ignorable="d"
              x:Class="ArcWallet.MyAccount" Title="MON COMPTE">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ColorConverter x:Key="ColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
   <ContentPage.Content>
       <StackLayout>
 
-            <Label Text="Statistiques" />
-            <Label Text="Plus gros revenu"></Label>
-            <ListView x:Name="listViewRevenu">
+            <Label Text="Solde" TextColor="#000000" FontSize="20" />
+            <Label x:Name="balanceLabel"  FontSize="30" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
+
+            <Label Text="Derniers mouvements" TextColor="#000000" FontSize="20" />
+            <ListView ItemTapped="ItemTapped" x:Name="listViewTransactions">
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="#eee"
+                            <StackLayout BackgroundColor="{Binding Converter={StaticResource ColorConverter}}"
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
 
                                     <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"
-                                TextColor="#b35e20" />
+                                TextColor="#000000" />
 
                                     <Label Text="{Binding Amount}"
                                 HorizontalOptions="EndAndExpand"
-                                TextColor="#f35e20" />
+                                TextColor="#000000" />
 
                                     <Label Text="CHF"
                                 HorizontalOptions="End"
-                                TextColor="#f35e20" />
+                                TextColor="#000000" />
 
                                 </StackLayout>
+                                
                             </StackLayout>
+                            
+                            
                         </ViewCell>
+                        
                     </DataTemplate>
+                    
                 </ListView.ItemTemplate>
+               
             </ListView>
-            <Label Text="Plus grosse dépense"></Label>
-            <ListView x:Name="listViewDepense">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                                <StackLayout Orientation="Horizontal">
-
-                                    <Label Text="{Binding Name}"
-                                HorizontalOptions="Start"
-                                TextColor="Red" />
-
-
-                                    <Label Text="{Binding Amount}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="Red" />
-
-                                    <Label Text="CHF"
-                                HorizontalOptions="End"
-                                TextColor="Red" />
-
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <Label>Total des revenus</Label>
-            <Label x:Name="totalRevenus" Text="{Binding Amount}"
-                                HorizontalOptions="Start"
-                                TextColor="Green" />
-            <Label>Total des dépenses</Label>
-            <Label x:Name="totalExpenditures" Text="{Binding Amount}"
-                                HorizontalOptions="Start"
-                                TextColor="Red" />
-
             <Button Clicked="addMouvementButton" ImageSource="plus.png"
                     HorizontalOptions="EndAndExpand"
                     VerticalOptions="EndAndExpand" 
@@ -81,6 +57,8 @@
                 BackgroundColor="Transparent"
                     AbsoluteLayout.LayoutBounds="0.94,1.18,0.5,0.25"
 />
+
+
         </StackLayout>
 
 

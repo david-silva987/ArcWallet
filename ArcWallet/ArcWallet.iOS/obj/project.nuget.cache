@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ZsRz3gfeZg7kPXPF3A1DeTyF1SmGHJdOrFBa+MIWkzo24g7yXhAGpBumDFwXB4XIauL0FfLkBK6IHImL3IZuqg==",
+  "dgSpecHash": "syyeP09ILoLKf3qES2P+0oARgIFkOjhNfiA9seen/MvjaA1pzGP4/StJ2SBcsCjCKYndMp+4iRU7K7b7QzUc/Q==",
   "success": true,
-  "projectFilePath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.iOS\\ArcWallet.iOS.csproj",
+  "projectFilePath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.iOS\\ArcWallet.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
+    "C:\\Users\\Robin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],

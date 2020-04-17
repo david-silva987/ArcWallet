@@ -14,8 +14,7 @@ namespace ArcWallet
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<User>().Wait();
-            _database.CreateTableAsync<Revenue>().Wait();
-            _database.CreateTableAsync<Expenditure>().Wait();
+            _database.CreateTableAsync<Transaction>().Wait();
         }
 
         public Task<List<User>> GetUserAsync()
@@ -23,47 +22,46 @@ namespace ArcWallet
             return _database.Table<User>().ToListAsync();
         }
 
-        public Task<List<Revenue>> GetRevenueAsync()
+
+        public Task<List<Transaction>> GetAllTransaction()
         {
-            return _database.Table<Revenue>().OrderBy(x => x.Date).ToListAsync();
-        }
-        public Task<List<Revenue>> GetBiggestRevenuAsync()
-        {
-            return _database.Table<Revenue>().OrderByDescending(x => x.Amount).Take(1).ToListAsync();
+            return _database.Table<Transaction>().OrderByDescending(x => x.ID).ToListAsync();
         }
 
-        public Task<string> GetAllRevenus()
+        public async Task<string> GetBalance()
         {
-            return _database.ExecuteScalarAsync<string>("SELECT SUM(Amount) FROM Revenue WHERE Amount > 0");
+            var nbSpent = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = False");
+            var nbRevenu = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = True");
+
+            float spent=0;
+            float revenu = 0;
+
+            if (nbSpent.Count > 0)
+            {
+                spent = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Transaction' WHERE Type = False");
+            }
+
+            if (nbRevenu.Count > 0)
+            {
+                revenu = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Transaction' WHERE Type = True");
+            }
+
+            float balance = revenu - spent;
+            return balance.ToString();
         }
 
 
-        public Task<string> GetAllExpenditures()
-        {
-            return _database.ExecuteScalarAsync<string>("SELECT SUM(Amount) FROM Expenditure WHERE Amount > 0");
-        }
-
-        public Task<List<Expenditure>> GetBiggestDepenseAsync()
-        {
-            return _database.Table<Expenditure>().OrderByDescending(x => x.Amount).Take(1).ToListAsync();
-        }
-        public Task<List<Expenditure>> GetExpenditureAsync()
-        {
-            return _database.Table<Expenditure>().OrderBy(x=> x.Date).ToListAsync();
-        }
 
         public Task<int> SavePersonAsync(User user)
         {
             return _database.InsertAsync(user);
         }
 
-        public Task<int> SaveExpenditureAsync(Expenditure expenditure)
+
+
+        public Task<int> SaveTransactionAsycn(Transaction transaction)
         {
-            return _database.InsertAsync(expenditure);
-        }
-        public Task<int> SaveRevenuAsycn(Revenue revenu)
-        {
-            return _database.InsertAsync(revenu);
+            return _database.InsertAsync(transaction);
         }
 
         public Task<string> RemoveExpenditure(int id)
@@ -76,10 +74,16 @@ namespace ArcWallet
             return _database.ExecuteScalarAsync<string>("DELETE FROM Revenue WHERE id =" + id);
         }
 
-       /* public Task<string> UpdateExpenditure(string name,string category,string date,float amount,string old_name,string old_category,string old_date,float old_amount)
+        public Task<string> RemoveTransaction(int id)
         {
-            return _database.ExecuteScalarAsync<string>("UPDATE Expenditure SET Name="+name+", Category="+category+",Amout="+amount+",Date="+date+"  WHERE Name="+ old_name+" and Category="+old_category+" and Date="+old_date+" and Amount ="+old_amount+";");
-        }*/
+            return _database.ExecuteScalarAsync<string>("DELETE FROM 'Transaction' WHERE id =" + id);
+
+        }
+
+        /* public Task<string> UpdateExpenditure(string name,string category,string date,float amount,string old_name,string old_category,string old_date,float old_amount)
+         {
+             return _database.ExecuteScalarAsync<string>("UPDATE Expenditure SET Name="+name+", Category="+category+",Amout="+amount+",Date="+date+"  WHERE Name="+ old_name+" and Category="+old_category+" and Date="+old_date+" and Amount ="+old_amount+";");
+         }*/
 
         public Task<int> UpdateExpenditure(Expenditure expenditure)
         {
@@ -89,6 +93,11 @@ namespace ArcWallet
         public Task<int> UpdateRevenue(Revenue revenue)
         {
             return _database.UpdateAsync(revenue);
+        }
+
+        public Task<int> UpdateTransaction(Transaction transaction)
+        {
+            return _database.UpdateAsync(transaction);
         }
     }
 }
