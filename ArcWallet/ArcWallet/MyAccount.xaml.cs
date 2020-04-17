@@ -43,19 +43,28 @@ namespace ArcWallet
 
         private async void ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            bool answer = await DisplayAlert("Action", "Que souhaitez-vous faire?", "Modifier", "Supprimer"); //true ->modifier ,false ->supprimer
-            var content = e.Item as Transaction;
-            Console.WriteLine(content.ID);
 
-            //Corriger car quand on click a cote ça supprime aussi 
-            if (!answer)
+            string UpdateOrDelete = await DisplayActionSheet ("Que souhaitez-vous faire?", "Modifier", "Supprimer");
+            var content = e.Item as Transaction;
+
+            if (UpdateOrDelete == "Supprimer")
             {
-                await App.Database.RemoveTransaction(content.ID);
-                listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+                string Yes = await DisplayActionSheet("Voulez-vous vraiment supprimer ce mouvement?", "Oui", "Non");
+
+                if (Yes == "Oui")
+                {
+                    await App.Database.RemoveTransaction(content.ID);
+                    listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+                    balanceLabel.Text = await App.Database.GetBalance() + " CHF";
+                }
             }
-            else
+            else if (UpdateOrDelete == "Modifier")
             {
                 await Navigation.PushAsync(new UpdateTransaction(content));
+
+                listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+
+                balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 
             }
         }
