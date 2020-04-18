@@ -64,6 +64,10 @@ namespace ArcWallet
             return await _database.ExecuteScalarAsync<string>("SELECT Category,count(*) FROM 'Transaction' WHERE Type = False GROUP BY Category;");
         }
 
+        public async Task<List<Transaction>> GetSpentByCategory()
+        {
+            return await _database.QueryAsync<Transaction>("SELECT Category,Amount , count(*) as 'Quantity' FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount;");
+        }
 
         public Task<int> SavePersonAsync(User user)
         {

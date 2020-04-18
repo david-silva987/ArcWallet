@@ -7,15 +7,54 @@
              x:Class="ArcWallet.PageStatistiques" Title="STATISTIQUES">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Dépense par catégorie" TextColor="#000000" FontSize="20" />
+
+            <ListView x:Name="listViewSpentByCategory" SeparatorVisibility="Default" SeparatorColor="Silver">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                        Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding Category}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+
+                                        <Label Text="{Binding Quantity}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+                                    </StackLayout>
+
+
+                                    <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#000000" />
+
+                                    <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#000000" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
             <Label Text="Plus grosse dépense" TextColor="#000000" FontSize="20" />
 
-            <ListView x:Name="listViewBiggestDepense">
+            <ListView x:Name="listViewBiggestDepense" IsEnabled="false">
 
                 <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                             <StackLayout
-                        Orientation="Vertical">
+                        Orientation="Vertical" >
                                 <StackLayout Orientation="Horizontal">
 
                                     <Label Text="{Binding Name}"
@@ -41,7 +80,7 @@
             </ListView>
             <Label Text="Plus gros revenu" TextColor="#000000" FontSize="20" />
 
-            <ListView x:Name="listViewBiggestRevenu">
+            <ListView x:Name="listViewBiggestRevenu" IsEnabled="false">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -71,6 +110,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
+           
             <Label Text="Catégorie la plus utilisée pour les dépenses" TextColor="#000000" FontSize="20" />
             <Label x:Name="mostUsedCategory"  FontSize="30" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
 

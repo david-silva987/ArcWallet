@@ -20,9 +20,9 @@ namespace ArcWallet
             var car = value as Transaction;
 
             if (car.Type == False)
-                return Color.LightCoral;
+                return Color.FromRgb(250,209,208);
 
-            return Color.LightGreen;
+            return Color.FromRgb(0, 250, 154);
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

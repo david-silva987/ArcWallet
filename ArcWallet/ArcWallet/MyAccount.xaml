@@ -30,6 +30,7 @@
                                 HorizontalOptions="Start"
                                 TextColor="#000000" />
 
+                                    
                                     <Label Text="{Binding Amount}"
                                 HorizontalOptions="EndAndExpand"
                                 TextColor="#000000" />

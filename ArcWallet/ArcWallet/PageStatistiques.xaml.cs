@@ -21,12 +21,15 @@ namespace ArcWallet
             base.OnAppearing();
             //  listView.ItemsSource = await App.Database.GetRevenueAsync();
             listViewBiggestDepense.ItemsSource = await App.Database.GetBiggestExpenditure();
-            listViewBiggestDepense.HasUnevenRows = true;
 
             listViewBiggestRevenu.ItemsSource = await App.Database.GetBiggestRevenu();
-            listViewBiggestRevenu.HasUnevenRows = true;
+            listViewSpentByCategory.ItemsSource = await App.Database.GetSpentByCategory();
 
             mostUsedCategory.Text = await App.Database.GetMostUsedCategoryExpenditure();
+
+            
+
+
 
 
         }
