@@ -66,7 +66,7 @@ namespace ArcWallet
 
         public async Task<List<Transaction>> GetSpentByCategory()
         {
-            return await _database.QueryAsync<Transaction>("SELECT Category,Amount , count(*) as Name FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount DESC;");
+            return await _database.QueryAsync<Transaction>("SELECT Category,SUM(Amount) as Amount , count(*) as Name FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount DESC;");
         }
 
         public Task<int> SavePersonAsync(User user)
