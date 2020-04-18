@@ -16,8 +16,8 @@ namespace ArcWallet
         {
             InitializeComponent();
             Children.Add(new MyAccount());
-            Children.Add(new PageDepense());
-            Children.Add(new PageRevenus());
+            Children.Add(new PageGraphe());
+            Children.Add(new PageStatistiques());
             CurrentPage = Children[0];
         }
     }

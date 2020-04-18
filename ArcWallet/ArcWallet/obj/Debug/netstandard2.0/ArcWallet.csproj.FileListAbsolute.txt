@@ -42,9 +42,7 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcW
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\About.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MyAccount.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache
-C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageDepense.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\TabbedPage.xaml.g.cs
-C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageRevenus.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\AjouterMouvement.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\Xamarin.Android.Support.v7.AppCompat.dll
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CopyComplete
@@ -60,3 +58,7 @@ C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\TabbedPage.xaml
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csproj.CopyComplete
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\addTransaction.xaml.g.cs
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\UpdateTransaction.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\AddTransaction.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\UpdateTransaction.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageStatistiques.xaml.g.cs
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageGraphe.xaml.g.cs
