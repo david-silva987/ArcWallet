@@ -22,10 +22,15 @@
                                         <Label Text="{Binding Category}"
                                 HorizontalOptions="Start"
                                 TextColor="#000000" />
+                                        <StackLayout Orientation="Horizontal">
 
-                                        <Label Text="{Binding Quantity}"
+                                            <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"
                                 TextColor="#000000" />
+                                        <Label Text="transaction(s) effectuée(s)"
+                                HorizontalOptions="Center"
+                                TextColor="#000000" />
+                                    </StackLayout>
                                     </StackLayout>
 
 
