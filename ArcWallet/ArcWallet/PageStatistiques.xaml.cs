@@ -50,7 +50,6 @@ namespace ArcWallet
             Console.ReadLine();
 
 
-            mostUsedCategory.Text = await App.Database.GetMostUsedCategoryExpenditure();
 
 
 

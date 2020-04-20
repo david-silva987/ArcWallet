@@ -18,8 +18,6 @@
                     <Label x:Name="totalReceived" Margin="10,2,0,0" FontSize="20" Text="Total des revenus"></Label>
                     <Label x:Name="totalReceivedBinding" Margin="25,0,0,0" HorizontalOptions="Center"  FontSize="25" Text="{Binding Amount}"></Label>
                     <Label  HorizontalOptions="Center" Margin="0,0,0,0" FontSize="25" Text="CHF"></Label>
-
-
                 </StackLayout>
             </StackLayout>
         </StackLayout>

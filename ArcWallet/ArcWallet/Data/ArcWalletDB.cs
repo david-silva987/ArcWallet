@@ -77,13 +77,14 @@ namespace ArcWallet
         }
 
         public async Task<List<Transaction>> GetBiggestExpenditure()
-        {
-            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = False ;");
+        { 
+
+            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = False GROUP BY Name HAVING max(Amount)>0 LIMIT 1;");
         }
 
         public async Task<List<Transaction>> GetBiggestRevenu()
         {
-            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = True ORDER BY Amount LIMIT 1 ;");
+            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = True GROUP BY Name HAVING max(Amount)>0 LIMIT 1;");
         }
         public async Task<string> GetMostUsedCategoryExpenditure()
         {

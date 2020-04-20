@@ -35,9 +35,6 @@ namespace ArcWallet {
         private global::Xamarin.Forms.ListView listViewBiggestRevenu;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label mostUsedCategory;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageStatistiques));
             labelNoTransactionsSpentByCategory = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "labelNoTransactionsSpentByCategory");
@@ -46,7 +43,6 @@ namespace ArcWallet {
             listViewBiggestDepense = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listViewBiggestDepense");
             labelNoBiggestRevenu = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "labelNoBiggestRevenu");
             listViewBiggestRevenu = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listViewBiggestRevenu");
-            mostUsedCategory = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "mostUsedCategory");
         }
     }
 }
