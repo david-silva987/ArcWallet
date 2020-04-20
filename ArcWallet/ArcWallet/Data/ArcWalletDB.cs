@@ -28,6 +28,32 @@ namespace ArcWallet
             return _database.Table<Transaction>().OrderByDescending(x => x.ID).ToListAsync();
         }
 
+        public async Task<string> GetMoneySpent()
+        {
+            var nbSpent = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = False");
+            float spent = 0;
+
+            if (nbSpent.Count>0)
+            {
+                spent = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Type = False");
+
+            }
+            return spent.ToString();
+        }
+
+        public async Task<string> GetMoneyReceîved()
+        {
+            var nbRevenu = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = True");
+            float revenu = 0;
+
+            if (nbRevenu.Count > 0)
+            {
+                revenu = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Type = True");
+
+            }
+            return revenu.ToString();
+        }
+
         public async Task<string> GetBalance()
         {
             var nbSpent = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = False");
@@ -57,7 +83,7 @@ namespace ArcWallet
 
         public async Task<List<Transaction>> GetBiggestRevenu()
         {
-            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = True ;");
+            return await _database.QueryAsync<Transaction>("SELECT Name,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = True ORDER BY Amount LIMIT 1 ;");
         }
         public async Task<string> GetMostUsedCategoryExpenditure()
         {

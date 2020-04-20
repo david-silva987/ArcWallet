@@ -7,34 +7,21 @@
              x:Class="ArcWallet.PageGraphe" Title="GRAPHE">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemTapped="ItemTapped" x:Name="listView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="totalSpent" Margin="10,450,0,0" FontSize="20" Text="Total des dépenses"></Label>
+                    <Label x:Name="totalSpentBinding"  Margin="10,450,0,0" HorizontalOptions="Center" FontSize="25" Text="{Binding Amount}"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,450,0,0"  FontSize="25" Text="CHF"></Label>
 
-                            <StackLayout BackgroundColor="#ffcccb"
-                        Orientation="Vertical">
-                                <StackLayout Orientation="Horizontal">
-
-                                    <Label Text="{Binding Name}"
-                                HorizontalOptions="Start"
-                                TextColor="#b35e20" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="totalReceived" Margin="10,2,0,0" FontSize="20" Text="Total des revenus"></Label>
+                    <Label x:Name="totalReceivedBinding" Margin="25,0,0,0" HorizontalOptions="Center"  FontSize="25" Text="{Binding Amount}"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,0,0,0" FontSize="25" Text="CHF"></Label>
 
 
-                                    <Label Text="{Binding Amount}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#f35e20" />
-
-                                    <Label Text="CHF"
-                                HorizontalOptions="End"
-                                TextColor="#f35e20" />
-
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

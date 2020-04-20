@@ -16,7 +16,10 @@
             <Label Text="Solde" TextColor="#000000" FontSize="20" />
             <Label x:Name="balanceLabel"  FontSize="30" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
 
-            <Label Text="Derniers mouvements" TextColor="#000000" FontSize="20" />
+
+            <Label x:Name="labelNoTransactions" IsVisible="False" Text="Aucune transaction effectuée jusqu'à maintenant..." FontSize="30" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
+
+            <Label Text="Derniers mouvements" x:Name="labelDerniersMouvements" TextColor="#000000" FontSize="20" />
             <ListView ItemTapped="ItemTapped" x:Name="listViewTransactions">
 
                 <ListView.ItemTemplate>

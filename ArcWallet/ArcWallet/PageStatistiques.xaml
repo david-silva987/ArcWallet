@@ -8,6 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Dépense par catégorie" TextColor="#000000" FontSize="20" />
+            <Label x:Name="labelNoTransactionsSpentByCategory" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
 
             <ListView x:Name="listViewSpentByCategory" SeparatorVisibility="Default" SeparatorColor="Silver">
 
@@ -52,8 +53,9 @@
 
             </ListView>
             <Label Text="Plus grosse dépense" TextColor="#000000" FontSize="20" />
+            <Label x:Name="labelNoBiggestDepense" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
 
-            <ListView x:Name="listViewBiggestDepense" IsEnabled="false">
+            <ListView x:Name="listViewBiggestDepense">
 
                 <ListView.ItemTemplate>
                 <DataTemplate>
@@ -84,8 +86,9 @@
 
             </ListView>
             <Label Text="Plus gros revenu" TextColor="#000000" FontSize="20" />
+            <Label x:Name="labelNoBiggestRevenu" IsVisible="False" Text="Aucune revenu à relever jusqu'à maintenant..." FontSize="20" HorizontalOptions="Center" Margin="0,0,0,15"></Label>
 
-            <ListView x:Name="listViewBiggestRevenu" IsEnabled="false">
+            <ListView x:Name="listViewBiggestRevenu">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

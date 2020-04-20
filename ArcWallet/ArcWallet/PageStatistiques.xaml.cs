@@ -21,13 +21,45 @@ namespace ArcWallet
             base.OnAppearing();
             //  listView.ItemsSource = await App.Database.GetRevenueAsync();
             listViewBiggestDepense.ItemsSource = await App.Database.GetBiggestExpenditure();
+            List<Transaction> list = listViewBiggestDepense.ItemsSource as List<Transaction>;
+            Console.WriteLine(list.Count);
+            if ((listViewBiggestDepense.ItemsSource as List<Transaction>).Count == 0)
+            {
+                listViewBiggestDepense.IsVisible = false;
+                labelNoBiggestDepense.IsVisible = true;
+            }
+
 
             listViewBiggestRevenu.ItemsSource = await App.Database.GetBiggestRevenu();
+            List<Transaction> list2 = listViewBiggestRevenu.ItemsSource as List<Transaction>;
+            Console.WriteLine(list2.Count);
+            if ((listViewBiggestRevenu.ItemsSource as List<Transaction>).Count == 0)
+            {
+                listViewBiggestRevenu.IsVisible = false;
+               
+                labelNoBiggestRevenu.IsVisible = true;
+            }
             listViewSpentByCategory.ItemsSource = await App.Database.GetSpentByCategory();
+            List<Transaction> list3 = listViewSpentByCategory.ItemsSource as List<Transaction>;
+            Console.WriteLine(list3.Count);
+            if ((listViewSpentByCategory.ItemsSource as List<Transaction>).Count == 0)
+            {
+                listViewSpentByCategory.IsVisible = false;
+                labelNoTransactionsSpentByCategory.IsVisible = true;
+            }
+            Console.ReadLine();
+
 
             mostUsedCategory.Text = await App.Database.GetMostUsedCategoryExpenditure();
 
-            
+
+
+
+
+
+
+
+
 
 
 

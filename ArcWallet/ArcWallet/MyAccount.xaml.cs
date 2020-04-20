@@ -30,6 +30,13 @@ namespace ArcWallet
             listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
             balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 
+            if((listViewTransactions.ItemsSource as List<Transaction>).Count ==0)
+            {
+                listViewTransactions.IsVisible = false;
+                labelDerniersMouvements.IsVisible = false;
+                labelNoTransactions.IsVisible = true;
+            }
+
             // listViewDepense.ItemsSource = await App.Database.GetBiggestDepenseAsync();
             // totalRevenus.Text = await App.Database.GetAllRevenus();
             //  totalExpenditures.Text = await App.Database.dsadsaAsync();
@@ -55,6 +62,12 @@ namespace ArcWallet
                 {
                     await App.Database.RemoveTransaction(content.ID);
                     listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+                    if ((listViewTransactions.ItemsSource as List<Transaction>).Count == 0)
+                    {
+                        listViewTransactions.IsVisible = false;
+                        labelDerniersMouvements.IsVisible = false;
+                        labelNoTransactions.IsVisible = true;
+                    }
                     balanceLabel.Text = await App.Database.GetBalance() + " CHF";
                 }
             }
