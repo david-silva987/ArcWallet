@@ -34,7 +34,13 @@ namespace ArcWallet
                 Chart1.IsVisible = true;
                 labelNoActivity.IsVisible = false;
             }
+            else
+            {
 
+                    Chart1.IsVisible = false;
+                    labelNoActivity.IsVisible = true;
+                
+            }
 
             List<Entry> entries = new List<Entry>()
             {
