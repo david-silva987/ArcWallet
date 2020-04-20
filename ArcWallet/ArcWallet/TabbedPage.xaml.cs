@@ -16,9 +16,16 @@ namespace ArcWallet
         {
             InitializeComponent();
             Children.Add(new MyAccount());
-            Children.Add(new PageGraphe());
+            Children.Add(new PageGraphes());
             Children.Add(new PageStatistiques());
             CurrentPage = Children[0];
+            this.CurrentPageChanged += PageChanged;
+        }
+
+        void PageChanged(object sender, EventArgs args)
+        {
+            var currentPage = CurrentPage as PageGraphes;
+            currentPage?.UpdateView();
         }
     }
 }

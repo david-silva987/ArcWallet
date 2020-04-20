@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArcWallet.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,6 +70,8 @@ namespace ArcWallet
                         labelNoTransactions.IsVisible = true;
                     }
                     balanceLabel.Text = await App.Database.GetBalance() + " CHF";
+                    DependencyService.Get<IMessage>().LongAlert("Transaction supprimée avec succès");
+
                 }
             }
             else if (UpdateOrDelete == "Modifier")
