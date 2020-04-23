@@ -94,6 +94,7 @@ namespace ArcWallet
 
                 });
                 await Navigation.PushAsync(new TabbedMyAccount());
+             
                 DependencyService.Get<IMessage>().LongAlert("Transaction modifiée avec succès");
             }
             else
