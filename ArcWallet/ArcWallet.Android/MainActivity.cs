@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace ArcWallet.Droid
 {
@@ -29,5 +30,7 @@ namespace ArcWallet.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+       
     }
 }

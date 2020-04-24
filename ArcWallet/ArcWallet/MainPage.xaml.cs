@@ -15,6 +15,7 @@ namespace ArcWallet
     {
 
         public List<MainMenuItem> menuList { get; set; }
+        protected override bool OnBackButtonPressed() => false;
 
         public MainPage()
         {

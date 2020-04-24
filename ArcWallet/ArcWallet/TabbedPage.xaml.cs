@@ -12,6 +12,8 @@ namespace ArcWallet
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedMyAccount : TabbedPage
     {
+        protected override bool OnBackButtonPressed() => false;
+
         public TabbedMyAccount()
         {
             NavigationPage.SetHasBackButton(this, false);
@@ -22,15 +24,14 @@ namespace ArcWallet
             CurrentPage = Children[0];
             this.CurrentPageChanged += PageChanged;
         }
-       
-
-
-
 
         void PageChanged(object sender, EventArgs args)
         {
             var currentPage = CurrentPage as PageGraphes;
             currentPage?.UpdateView();
         }
+
+        
+   
     }
 }
