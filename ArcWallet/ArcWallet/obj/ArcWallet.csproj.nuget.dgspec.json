@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {}
+    "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {}
   },
   "projects": {
-    "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
+    "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
+        "projectUniqueName": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
         "projectName": "ArcWallet",
-        "projectPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
-        "packagesPath": "C:\\Users\\david.dasilva1\\.nuget\\packages\\",
-        "outputPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\obj\\",
+        "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
+        "packagesPath": "C:\\Users\\sebastie.peiris\\.nuget\\packages\\",
+        "outputPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\david.dasilva1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebastie.peiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -80,7 +79,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

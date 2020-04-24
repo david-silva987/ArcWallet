@@ -2347,24 +2347,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david.dasilva1\\.nuget\\packages\\": {},
+    "C:\\Users\\sebastie.peiris\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+      "projectUniqueName": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
       "projectName": "ArcWallet.Android",
-      "projectPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
-      "packagesPath": "C:\\Users\\david.dasilva1\\.nuget\\packages\\",
-      "outputPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
+      "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+      "packagesPath": "C:\\Users\\sebastie.peiris\\.nuget\\packages\\",
+      "outputPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\david.dasilva1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sebastie.peiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2378,8 +2378,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
-              "projectPath": "C:\\HEARC3\\C#\\xamarin\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
+            "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
+              "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
             }
           }
         }

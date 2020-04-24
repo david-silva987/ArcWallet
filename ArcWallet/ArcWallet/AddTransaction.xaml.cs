@@ -103,7 +103,7 @@ namespace ArcWallet
 
         private bool CheckAmount()
         {
-            return Regex.IsMatch(AmoutEntry.Text, @"\d*\.?\d*") && AmoutEntry.Text != "";
+            return !string.IsNullOrEmpty(AmoutEntry.Text) && AmoutEntry.Text != "." && !AmoutEntry.Text.Contains("-");
         }
 
     }
