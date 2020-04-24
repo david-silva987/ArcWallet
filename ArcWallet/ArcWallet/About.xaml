@@ -7,9 +7,14 @@
              x:Class="ArcWallet.About">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center">
-            <Label Text="Application créée  par Alfred Robin, da Silva David et Peiris Sébastien dans le cadre du cours .NET suivi par Olivier Hüsser." />
-            <Label Text="ArcWallet permet d'avoir un porte monnaie virtuel avec un suivi de vos dépenses/revenus." />
-            <Image Source="logo_ing.png" />
+            <Label Text="A propos" FontSize="Title" TextColor="#000000" HorizontalOptions="Center"  />
+            <Label Margin="5,50,5,1" Text="Application simulant un porte-monnaie virtuel avec un suivi des revenus/dépenses réalisé dans le cadre du cours de .Net." />
+            <Label Margin="5,1,5,1" Text="Réalisé par David da Silva, Robin Alfred, Sébastien Peiris" />
+            <Label Margin="5,1,5,1" Text="Classe: INF3dlm-b" />
+            <Label Margin="5,1,5,1" Text="Professeur: Olivier Hüsser" />
+            <Label Margin="5,1,5,1" Text="Année: 2020" />
+            
+            <Image Source="logo_arc.png" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1533,3 +1533,5 @@ C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_GenerateJava
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget.png
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget2.png
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\logo_arc.png
