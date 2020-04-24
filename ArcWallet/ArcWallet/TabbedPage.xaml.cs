@@ -14,6 +14,7 @@ namespace ArcWallet
     {
         public TabbedMyAccount()
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             Children.Add(new MyAccount());
             Children.Add(new PageGraphes());
@@ -21,6 +22,10 @@ namespace ArcWallet
             CurrentPage = Children[0];
             this.CurrentPageChanged += PageChanged;
         }
+       
+
+
+
 
         void PageChanged(object sender, EventArgs args)
         {

@@ -19,6 +19,7 @@ namespace ArcWallet
             InitializeComponent();
             transactionPicker.SelectedIndex = 0;
             categoryPicker.SelectedIndex = 0;
+
         }
 
         public void transactionType_SelectedIndexChanged(object sender, EventArgs e)

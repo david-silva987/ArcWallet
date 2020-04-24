@@ -2,15 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:ArcWallet"
              mc:Ignorable="d"
              x:Class="ArcWallet.PageStatistiques" Title="STATISTIQUES">
+    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImagePostfixValueConverter x:Key="PostfixConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0,0,0,20">
             <Label Text="Dépense par catégorie" TextColor="#000000" FontSize="20" />
             <Label x:Name="labelNoTransactionsSpentByCategory" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="StartAndExpand" Margin="0,0,0,15"></Label>
 
-            <ListView x:Name="listViewSpentByCategory" SeparatorVisibility="Default" SeparatorColor="Silver">
+            <ListView x:Name="listViewSpentByCategory" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -18,6 +25,14 @@
                             <StackLayout
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
+                                    
+                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
+
+
                                     <StackLayout Orientation="Vertical">
 
                                         <Label Text="{Binding Category}"
@@ -42,6 +57,7 @@
                                     <Label Text="CHF"
                                 HorizontalOptions="End"
                                 TextColor="#000000" />
+                                    
 
                                 </StackLayout>
                             </StackLayout>
@@ -52,17 +68,23 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <Label Text="Plus grosse dépense" TextColor="#000000" FontSize="20" />
+            <Label Text="Plus grosse dépense" TextColor="Red" FontSize="20" />
             <Label x:Name="labelNoBiggestDepense" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="StartAndExpand" Margin="0,0,0,15"></Label>
 
-            <ListView x:Name="listViewBiggestDepense">
+            <ListView x:Name="listViewBiggestDepense" HeightRequest="45">
 
                 <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        
                             <StackLayout
                         Orientation="Vertical" >
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="LightCoral">
+                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
 
                                     <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"
@@ -85,17 +107,23 @@
             </ListView.ItemTemplate>
 
             </ListView>
-            <Label Text="Plus gros revenu" TextColor="#000000" FontSize="20" />
+            <Label Text="Plus gros revenu" TextColor="Green" FontSize="20" />
             <Label x:Name="labelNoBiggestRevenu" IsVisible="False" Text="Aucun revenu à relever jusqu'à maintenant..." FontSize="20" HorizontalOptions="Start" Margin="0,0,0,15"></Label>
 
-            <ListView x:Name="listViewBiggestRevenu">
+            <ListView x:Name="listViewBiggestRevenu" HeightRequest="45">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout
                         Orientation="Vertical">
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
+                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
+                                    
 
                                     <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"

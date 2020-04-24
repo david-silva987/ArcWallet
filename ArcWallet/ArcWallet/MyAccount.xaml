@@ -8,9 +8,12 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ColorConverter x:Key="ColorConverter" />
+            <converters:ImagePostfixValueConverter x:Key="PostfixConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-  <ContentPage.Content>
+
+    
+    <ContentPage.Content>
       <StackLayout>
 
             <Label Text="Solde" TextColor="#000000" FontSize="20" />
@@ -28,6 +31,11 @@
                             <StackLayout BackgroundColor="{Binding Converter={StaticResource ColorConverter}}"
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
 
                                     <Label Text="{Binding Name}"
                                 HorizontalOptions="Start"

@@ -130,3 +130,9 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\obj\iPhone\Debug\XamlC.st
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\obj\iPhone\Debug\ArcWallet.iOS.csproj.CopyComplete
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\obj\iPhone\Debug\ArcWallet.iOS.exe
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\obj\iPhone\Debug\ArcWallet.iOS.pdb
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.iOS.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.Forms.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
