@@ -11,7 +11,7 @@
             <Label Text="Définissez votre budget" FontSize="Title" TextColor="#000000" HorizontalOptions="CenterAndExpand" />
           <Image Source="Budget2.png"  HeightRequest="200" Margin="0,20,0,0" HorizontalOptions="Center"/>
           <Entry Keyboard="Numeric" x:Name="BudgetEntry" Margin="50,10,50,10" VerticalOptions="CenterAndExpand" Placeholder="Exemple: 1000 CHF"/>
-          <Button Text="Valider le nouveau budget" Margin="10,10,10,10" VerticalOptions="CenterAndExpand"
+            <Button Text="Valider le nouveau budget" Margin="10,10,10,10" VerticalOptions="CenterAndExpand" Clicked="addBudgetButton"
                        />
         </StackLayout>
     </ContentPage.Content>

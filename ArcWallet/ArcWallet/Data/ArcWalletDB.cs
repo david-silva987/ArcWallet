@@ -15,6 +15,7 @@ namespace ArcWallet
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<User>().Wait();
             _database.CreateTableAsync<Transaction>().Wait();
+            _database.CreateTableAsync<MyBudget>().Wait();
         }
 
         public Task<List<User>> GetUserAsync()
@@ -76,6 +77,19 @@ namespace ArcWallet
             return balance.ToString();
         }
 
+        public async Task<float> GetBudget()
+        {
+            float budget = 0;
+            var nbBudget = await _database.QueryAsync<MyBudget>("SELECT * FROM 'MyBudget'");
+
+            if(nbBudget.Count > 0)
+            {
+                budget = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'MyBudget'");
+            }
+            
+            return budget;
+        }
+
         public async Task<List<Transaction>> GetBiggestExpenditure()
         { 
 
@@ -96,12 +110,20 @@ namespace ArcWallet
             return await _database.QueryAsync<Transaction>("SELECT Category,SUM(Amount) as Amount , count(*) as Name FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount DESC;");
         }
 
+        public async Task<float> GetSpentLastWeek()
+        {
+            return await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATETIME('now', '-7 day')) and Type = False");
+        }
+
         public Task<int> SavePersonAsync(User user)
         {
             return _database.InsertAsync(user);
         }
 
-
+        public Task<int> SaveBudgetAsync(MyBudget budget)
+        {
+            return _database.InsertAsync(budget);
+        }
 
         public Task<int> SaveTransactionAsycn(Transaction transaction)
         {
@@ -143,5 +165,10 @@ namespace ArcWallet
         {
             return _database.UpdateAsync(transaction);
         }
+        public Task<int> UpdateBudget(MyBudget budget)
+        {
+            return _database.UpdateAsync(budget);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArcWallet.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,43 @@ namespace ArcWallet
         public Budget()
         {
             InitializeComponent();
+        }
+
+        async void addBudgetButton(object sender, EventArgs e)
+        {
+            if(CheckEntryValid())
+            {
+                if(await App.Database.GetBudget() == 0.0)
+                {
+                    await App.Database.SaveBudgetAsync(new MyBudget
+                    {
+                        Amount = float.Parse(BudgetEntry.Text)
+                    });
+                    await Navigation.PushAsync(new TabbedMyAccount());
+                }
+                else
+                {
+                    await App.Database.UpdateBudget(new MyBudget
+                {
+                    ID = 1,
+                    Amount = float.Parse(BudgetEntry.Text),
+
+                });
+                await Navigation.PushAsync(new TabbedMyAccount());
+                }
+
+                
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide");
+            }
+            
+        }
+
+        private bool CheckEntryValid()
+        {
+            return !string.IsNullOrEmpty(BudgetEntry.Text) && BudgetEntry.Text != "." && !BudgetEntry.Text.Contains("-");
         }
     }
 }

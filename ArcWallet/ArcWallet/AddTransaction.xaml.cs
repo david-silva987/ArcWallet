@@ -59,6 +59,7 @@ namespace ArcWallet
             {
                 Console.WriteLine("OKKKK");
                 Console.WriteLine(categorySelected);
+                
                 await App.Database.SaveTransactionAsycn(new Transaction
                 {
                     Type = transactionType,

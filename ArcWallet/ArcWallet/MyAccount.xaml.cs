@@ -38,6 +38,17 @@ namespace ArcWallet
                 labelNoTransactions.IsVisible = true;
             }
 
+            
+            if(await App.Database.GetBudget() != 0.0)
+            {
+                // budgetLabel.Text = await App.Database.GetBudget() + " CHF";
+                budgetLabel.Text = await App.Database.GetSpentLastWeek() + "";
+            }
+            else
+            {
+                budgetLabel.Text = "Pas de budget";
+            }
+
             // listViewDepense.ItemsSource = await App.Database.GetBiggestDepenseAsync();
             // totalRevenus.Text = await App.Database.GetAllRevenus();
             //  totalExpenditures.Text = await App.Database.dsadsaAsync();
