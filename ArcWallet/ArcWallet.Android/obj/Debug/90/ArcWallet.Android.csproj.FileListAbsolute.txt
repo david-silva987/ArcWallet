@@ -1535,3 +1535,15 @@ C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\stamp\_ResolveLibra
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget.png
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget2.png
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\logo_arc.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\voyage.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\restaurants.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\transport.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\sante.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\autre.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\divertissement.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\courses.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\revenu.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\appicon.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\budget2.png
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.Android\obj\Debug\90\res\drawable\logo_arc.png
