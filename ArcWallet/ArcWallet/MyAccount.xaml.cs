@@ -41,8 +41,8 @@ namespace ArcWallet
             
             if(await App.Database.GetBudget() != 0.0)
             {
-                // budgetLabel.Text = await App.Database.GetBudget() + " CHF";
-                budgetLabel.Text = await App.Database.GetSpentLastWeek() + "";
+                budgetLabel.Text = await App.Database.GetBudget() + " CHF";
+                //budgetLabel.Text = await App.Database.GetSpentLastWeek() + "";
             }
             else
             {

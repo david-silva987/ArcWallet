@@ -112,7 +112,13 @@ namespace ArcWallet
 
         public async Task<float> GetSpentLastWeek()
         {
-            return await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATETIME('now', '-7 day')) and Type = False");
+            float amount = 0;
+            var nbAmount = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction'");
+            if(nbAmount.Count > 0)
+            {
+                amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATETIME('now', '-7 day')) and Type = False");
+            }
+            return amount;
         }
 
         public Task<int> SavePersonAsync(User user)
