@@ -60,9 +60,9 @@ namespace ArcWallet
                 Console.WriteLine("OKKKK");
                 Console.WriteLine(categorySelected);
 
-                float spentLastWeek = await App.Database.GetSpentLastWeek();
+                float spentLastWeek = float.Parse(await App.Database.GetSpentLastWeek());
                 float budget = await App.Database.GetBudget();
-
+                Console.WriteLine("TOTAL 7 JOURS : " + spentLastWeek);
                 if(spentLastWeek + float.Parse(AmoutEntry.Text) > budget && budget != 0 && transactionType == false)
                 {
                     string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");

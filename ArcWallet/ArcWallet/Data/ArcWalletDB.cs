@@ -110,15 +110,15 @@ namespace ArcWallet
             return await _database.QueryAsync<Transaction>("SELECT Category,SUM(Amount) as Amount , count(*) as Name FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount DESC;");
         }
 
-        public async Task<float> GetSpentLastWeek()
+        public async Task<string> GetSpentLastWeek()
         {
             float amount = 0;
-            var nbAmount = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction'");
+            var nbAmount = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE type=False");
             if(nbAmount.Count > 0)
             {
-                amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATETIME('now', '-7 day')) and Type = False");
+                amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-7 day')) and Type = False");
             }
-            return amount;
+            return amount.ToString();
         }
 
         public Task<int> SavePersonAsync(User user)
