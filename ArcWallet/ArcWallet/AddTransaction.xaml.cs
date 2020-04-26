@@ -17,21 +17,23 @@ namespace ArcWallet
         public AddTransaction()
         {
             InitializeComponent();
+
+            //Select by default the first item of picker
             transactionPicker.SelectedIndex = 0;
             categoryPicker.SelectedIndex = 0;
-
         }
 
         public void transactionType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             var picker = sender as Picker;
+            
+            //"Dépense" Selected
             if (picker.Items[picker.SelectedIndex].Equals("Dépense"))
             {
                 categoryLabel.IsVisible = true;
                 categoryPicker.IsVisible = true;
-
             }
+            //"Revenu" Selected
             else
             {
                 categoryLabel.IsVisible = false;
@@ -41,72 +43,66 @@ namespace ArcWallet
 
         async void addTransactionButton(object sender, EventArgs e)
         {
-            bool transactionType;
-            string categorySelected;
+            //If form is valid
+            if (CheckFormValid())
+            {
+                float spentLastWeek = float.Parse(await App.Database.GetSpentLastSevenDays()); //return 0 if budget is not defined
+                float budget = await App.Database.GetBudget();
+                /*Check if:
+                 * transactionPicker' selected item is "Dépense"
+                 * Date of transaction is not before last 7 days
+                 * Budget is not equal to 0 (because 0 -> budget is not defined)
+                 * Last 7 Days spent's amount + amount in form  is bigger than budget)
+                 */
 
+                if (dateEntry.Date.Date > DateTime.Now.Date.AddDays(-7) && transactionPicker.SelectedItem.ToString().Equals("Dépense") && budget != 0 && spentLastWeek + float.Parse(AmoutEntry.Text) > budget)
+                {
+                    string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");
+
+                    if (BudgetCheck == "Oui")
+                    {
+                        AddTransactionToDB();
+                    }
+      
+                }
+                else
+                {
+                    AddTransactionToDB();
+                }
+            }
+            //Form is not valid
+            else
+            {
+                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide");
+            }
+        }
+
+        //Add transaction to DB
+        private async void AddTransactionToDB()
+        {
+            bool transactionType;
             if (transactionPicker.SelectedItem.ToString().Equals("Dépense"))
             {
                 transactionType = false;
-                categorySelected = categoryPicker.SelectedItem.ToString();
             }
             else
             {
                 transactionType = true;
-                categorySelected = "Revenu";
             }
-                        
-            if(CheckFormValid())
+
+            await App.Database.SaveTransactionAsycn(new Transaction
             {
-                Console.WriteLine("OKKKK");
-                Console.WriteLine(categorySelected);
+                Type = transactionType,
+                Name = nameEntry.Text,
+                Category = categoryPicker.SelectedItem.ToString(),
+                Date = dateEntry.Date.ToString(),
+                Amount = float.Parse(AmoutEntry.Text),
 
-                float spentLastWeek = float.Parse(await App.Database.GetSpentLastWeek());
-                float budget = await App.Database.GetBudget();
-                Console.WriteLine("TOTAL 7 JOURS : " + spentLastWeek);
-                if(spentLastWeek + float.Parse(AmoutEntry.Text) > budget && budget != 0 && transactionType == false)
-                {
-                    string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");
-                    
-                    if(BudgetCheck == "Oui")
-                    {
-                        await App.Database.SaveTransactionAsycn(new Transaction
-                        {
-                            Type = transactionType,
-                            Name = nameEntry.Text,
-                            Category = categorySelected,
-                            Date = dateEntry.Date.ToString(),
-                            Amount = float.Parse(AmoutEntry.Text),
-
-                        });
-                        await Navigation.PushAsync(new TabbedMyAccount());
-                    }
-
-
-                }
-                else
-                {
-                    await App.Database.SaveTransactionAsycn(new Transaction
-                    {
-                        Type = transactionType,
-                        Name = nameEntry.Text,
-                        Category = categorySelected,
-                        Date = dateEntry.Date.ToString(),
-                        Amount = float.Parse(AmoutEntry.Text),
-
-                    });
-                    await Navigation.PushAsync(new TabbedMyAccount());
-                }
-
-                
-            }
-            else
-            {
-                Console.WriteLine("Pas Ok");
-                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide");
-            }
-
+            });
+            await Navigation.PushAsync(new TabbedMyAccount());
         }
 
+        //Check if form's entrys are valid
         private bool CheckFormValid()
         {
             if (transactionPicker.SelectedItem.ToString().Equals("Dépense"))
@@ -117,7 +113,6 @@ namespace ArcWallet
             {
                 return CheckName() && CheckAmount();
             }
-
         }
 
         private bool CheckName()

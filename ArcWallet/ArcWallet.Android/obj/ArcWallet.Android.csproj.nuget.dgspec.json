@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj": {}
+    "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj": {}
   },
   "projects": {
-    "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj": {
+    "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+        "projectUniqueName": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
         "projectName": "ArcWallet.Android",
-        "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
-        "packagesPath": "C:\\Users\\sebastie.peiris\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
+        "projectPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\ArcWallet.Android.csproj",
+        "packagesPath": "C:\\Users\\Robin\\.nuget\\packages\\",
+        "outputPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sebastie.peiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Robin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
-                "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
+              "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
+                "projectPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj"
               }
             }
           }
@@ -66,20 +66,20 @@
         }
       }
     },
-    "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
+    "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
+        "projectUniqueName": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
         "projectName": "ArcWallet",
-        "projectPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
-        "packagesPath": "C:\\Users\\sebastie.peiris\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\Annee3\\DOTNET\\ArcWallet\\ArcWallet\\ArcWallet\\obj\\",
+        "projectPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\ArcWallet.csproj",
+        "packagesPath": "C:\\Users\\Robin\\.nuget\\packages\\",
+        "outputPath": "C:\\dotNet\\ArcWallet\\ArcWallet\\ArcWallet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\sebastie.peiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Robin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -141,7 +141,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

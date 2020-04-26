@@ -30,7 +30,7 @@ namespace ArcWallet
             }
 
 
-            listViewBiggestRevenu.ItemsSource = await App.Database.GetBiggestRevenu();
+            listViewBiggestRevenu.ItemsSource = await App.Database.GetBiggestRevenue();
             List<Transaction> list2 = listViewBiggestRevenu.ItemsSource as List<Transaction>;
             Console.WriteLine(list2.Count);
             if ((listViewBiggestRevenu.ItemsSource as List<Transaction>).Count == 0)

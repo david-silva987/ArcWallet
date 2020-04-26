@@ -25,8 +25,8 @@ namespace ArcWallet
             base.OnAppearing();
 
             // listView.ItemsSource = await App.Database.GetExpenditureAsync();
-            totalSpentBinding.Text = await App.Database.GetMoneySpent();
-            totalReceivedBinding.Text = await App.Database.GetMoneyReceîved();
+            totalSpentBinding.Text = await App.Database.GetAmountExpenditures();
+            totalReceivedBinding.Text = await App.Database.GetAmountRevenues();
 
 
             if(float.Parse(totalReceivedBinding.Text) >0 || float.Parse(totalSpentBinding.Text) >0)

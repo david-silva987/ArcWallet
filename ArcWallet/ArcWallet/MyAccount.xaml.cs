@@ -28,7 +28,7 @@ namespace ArcWallet
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+            listViewTransactions.ItemsSource = await App.Database.GetAllTransactions();
             balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 
             if((listViewTransactions.ItemsSource as List<Transaction>).Count ==0)
@@ -73,7 +73,7 @@ namespace ArcWallet
                 if (Yes == "Oui")
                 {
                     await App.Database.RemoveTransaction(content.ID);
-                    listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+                    listViewTransactions.ItemsSource = await App.Database.GetAllTransactions();
                     if ((listViewTransactions.ItemsSource as List<Transaction>).Count == 0)
                     {
                         listViewTransactions.IsVisible = false;
@@ -89,7 +89,7 @@ namespace ArcWallet
             {
                 await Navigation.PushAsync(new UpdateTransaction(content));
 
-                listViewTransactions.ItemsSource = await App.Database.GetAllTransaction();
+                listViewTransactions.ItemsSource = await App.Database.GetAllTransactions();
 
                 balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 

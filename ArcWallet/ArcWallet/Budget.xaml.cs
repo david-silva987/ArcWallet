@@ -41,7 +41,6 @@ namespace ArcWallet
                 await Navigation.PushAsync(new TabbedMyAccount());
                 }
 
-                
             }
             else
             {
