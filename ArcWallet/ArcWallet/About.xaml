@@ -13,7 +13,6 @@
             <Label Margin="5,1,5,1" Text="Classe: INF3dlm-b" />
             <Label Margin="5,1,5,1" Text="Professeur: Olivier Hüsser" />
             <Label Margin="5,1,5,1" Text="Année: 2020" />
-            
             <Image Source="logo_arc.png" />
         </StackLayout>
     </ContentPage.Content>

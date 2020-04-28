@@ -58,7 +58,6 @@ C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Xaml
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageGraphes.xaml.g.cs
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageGraphes.xaml.g.cs
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\PageStatistiques.xaml.g.cs
-C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Budget.xaml.g.cs
 C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\Budget.xaml.g.cs
 C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.deps.json
 C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\bin\Debug\netstandard2.0\ArcWallet.dll
@@ -83,3 +82,5 @@ C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcW
 C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.dll
 C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ref\ArcWallet.dll
 C:\DEV\Annee3\DOTNET\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.pdb
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\MyBudget.xaml.g.cs
+C:\dotNet\ArcWallet\ArcWallet\ArcWallet\obj\Debug\netstandard2.0\ArcWallet.csprojAssemblyReference.cache

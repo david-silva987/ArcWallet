@@ -5,11 +5,8 @@
              xmlns:pages="clr-namespace:ArcWallet">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu"
-                 BackgroundColor="#e8e8e8">
-
+                     BackgroundColor="#e8e8e8">
             <StackLayout Orientation="Vertical">
-
-
                 <ListView x:Name="navigationDrawerList"
                   RowHeight="55"
                   SeparatorVisibility="Default"
@@ -19,36 +16,33 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-
                                 <!-- Main design for our menu items -->
                                 <StackLayout VerticalOptions="FillAndExpand"
-                             Orientation="Horizontal"
-                             Padding="20,10,0,10"
-                             Spacing="20">
+                                             Orientation="Horizontal"
+                                             Padding="20,10,0,10"
+                                             Spacing="20">
 
                                     <Image Source="{Binding Icon}"
-                         WidthRequest="40"
-                         HeightRequest="40"
-                         VerticalOptions="Start" />
+                                           WidthRequest="40"
+                                           HeightRequest="40"
+                                           VerticalOptions="Start" />
 
                                     <Label Text="{Binding Title}"
-                         FontSize="Small"
-                         VerticalOptions="Center"
-                         TextColor="Black"/>
+                                           FontSize="Small"
+                                           VerticalOptions="Center"
+                                           TextColor="Black"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackLayout>
-
         </ContentPage>
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
         <NavigationPage>
-
+            
         </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

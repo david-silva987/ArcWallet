@@ -14,7 +14,7 @@ namespace ArcWallet
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Transaction>().Wait();
-            _database.CreateTableAsync<MyBudget>().Wait();
+            _database.CreateTableAsync<Budget>().Wait();
         }
 
         //Get all transactions
@@ -77,11 +77,11 @@ namespace ArcWallet
         public async Task<float> GetBudget()
         {
             float budget = 0;
-            var nbBudget = await _database.QueryAsync<MyBudget>("SELECT * FROM 'MyBudget'");
+            var nbBudget = await _database.QueryAsync<Budget>("SELECT * FROM 'Budget'");
 
             if(nbBudget.Count > 0)
             {
-                budget = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'MyBudget'");
+                budget = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Budget'");
             }
             
             return budget;
@@ -120,7 +120,7 @@ namespace ArcWallet
         }
 
         //Add budget to DB
-        public Task<int> SaveBudgetAsync(MyBudget budget)
+        public Task<int> SaveBudgetAsync(Budget budget)
         {
             return _database.InsertAsync(budget);
         }
@@ -145,7 +145,7 @@ namespace ArcWallet
         }
 
         //Update a budget in DB
-        public Task<int> UpdateBudget(MyBudget budget)
+        public Task<int> UpdateBudget(Budget budget)
         {
             return _database.UpdateAsync(budget);
         }
@@ -153,17 +153,3 @@ namespace ArcWallet
     }
 }
 
-
-
-/*
- *    public async Task<string> GetMostUsedCategoryExpenditure()
-        {
-            return await _database.ExecuteScalarAsync<string>("SELECT Category,count(*) FROM 'Transaction' WHERE Type = False GROUP BY Category;");
-        }
-
-    */
-
-/* public Task<string> UpdateExpenditure(string name,string category,string date,float amount,string old_name,string old_category,string old_date,float old_amount)
-    {
-        return _database.ExecuteScalarAsync<string>("UPDATE Expenditure SET Name="+name+", Category="+category+",Amout="+amount+",Date="+date+"  WHERE Name="+ old_name+" and Category="+old_category+" and Date="+old_date+" and Amount ="+old_amount+";");
-    }*/

@@ -39,7 +39,7 @@
             
             <Label>Montant</Label>
             <Entry Keyboard="Numeric" x:Name="AmoutEntry"
-                   Placeholder="Le montant du revenu" />
+                   Placeholder="Le montant de la transaction" />
 
            <Button Text="Ajouter le mouvement"
                     Clicked="addTransactionButton" />

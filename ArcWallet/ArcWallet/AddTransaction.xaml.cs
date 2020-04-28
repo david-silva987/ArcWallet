@@ -81,20 +81,24 @@ namespace ArcWallet
         private async void AddTransactionToDB()
         {
             bool transactionType;
+            string categorySelected;
+
             if (transactionPicker.SelectedItem.ToString().Equals("Dépense"))
             {
                 transactionType = false;
+                categorySelected = categoryPicker.SelectedItem.ToString();
             }
             else
             {
                 transactionType = true;
+                categorySelected = "Revenu";
             }
 
             await App.Database.SaveTransactionAsycn(new Transaction
             {
                 Type = transactionType,
                 Name = nameEntry.Text,
-                Category = categoryPicker.SelectedItem.ToString(),
+                Category = categorySelected,
                 Date = dateEntry.Date.ToString(),
                 Amount = float.Parse(AmoutEntry.Text),
 

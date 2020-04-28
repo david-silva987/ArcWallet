@@ -8,7 +8,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ColorConverter x:Key="ColorConverter" />
-            <converters:ImagePostfixValueConverter x:Key="PostfixConverter"/>
+            <converters:ImageNameConverter x:Key="ImageNameConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -34,7 +34,7 @@
                             <StackLayout BackgroundColor="{Binding Converter={StaticResource ColorConverter}}"
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
                                            Aspect="AspectFill"
                                            WidthRequest="35"
                                            HeightRequest="35"

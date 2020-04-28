@@ -42,6 +42,9 @@
     <Compile Update="AddTransaction.xaml.cs">
       <DependentUpon>AddTransaction.xaml</DependentUpon>
     </Compile>
+    <Compile Update="MyBudget.xaml.cs">
+      <DependentUpon>MyBudget.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -54,7 +57,7 @@
     <EmbeddedResource Update="AjouterRevenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Budget.xaml">
+    <EmbeddedResource Update="MyBudget.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Depense.xaml">

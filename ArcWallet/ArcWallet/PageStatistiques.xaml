@@ -9,7 +9,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:ImagePostfixValueConverter x:Key="PostfixConverter"/>
+            <local:ImageNameConverter x:Key="ImageNameConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -25,8 +25,8 @@
                             <StackLayout
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
-                                    
-                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
                                            Aspect="AspectFill"
                                            WidthRequest="35"
                                            HeightRequest="35"
@@ -80,7 +80,7 @@
                             <StackLayout
                         Orientation="Vertical" >
                                 <StackLayout Orientation="Horizontal" BackgroundColor="LightCoral">
-                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
                                            Aspect="AspectFill"
                                            WidthRequest="35"
                                            HeightRequest="35"
@@ -118,7 +118,7 @@
                             <StackLayout
                         Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
-                                    <Image Source="{Binding Category, Converter={StaticResource PostfixConverter}, ConverterParameter=mystring.png} "
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
                                            Aspect="AspectFill"
                                            WidthRequest="35"
                                            HeightRequest="35"
