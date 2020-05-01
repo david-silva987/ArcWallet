@@ -31,6 +31,17 @@ namespace ArcWallet
             listViewTransactions.ItemsSource = await App.Database.GetAllTransactions();
             balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 
+            bool typeBudget = await App.Database.GetTypeBudget();
+
+            if(typeBudget)
+            {
+                budgetTitlelbl.Text = "Budget Hebdomadaire";
+            }
+            else
+            {
+                budgetTitlelbl.Text = "Budget Mensuel";
+            }
+
             if((listViewTransactions.ItemsSource as List<Transaction>).Count ==0)
             {
                 listViewTransactions.IsVisible = false;

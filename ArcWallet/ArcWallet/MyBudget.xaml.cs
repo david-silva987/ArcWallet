@@ -20,13 +20,27 @@ namespace ArcWallet
 
         async void addBudgetButton(object sender, EventArgs e)
         {
-            if(CheckEntryValid())
+            bool budgetType;
+            if (CheckEntryValid())
             {
-                if(await App.Database.GetBudget() == 0.0)
+                if (budgetPicker.SelectedItem.ToString().Equals("Hebdomadaire"))
                 {
+                    budgetType = true;
+                }
+                else
+                {
+                    budgetType = false;
+                }
+
+                if (await App.Database.GetBudget() == 0.0)
+                {
+
                     await App.Database.SaveBudgetAsync(new Budget
                     {
+                        Type= budgetType,
+                        Date= DateTime.Now.ToString(),
                         Amount = float.Parse(BudgetEntry.Text)
+
                     });
                     await Navigation.PushAsync(new TabbedMyAccount());
                 }
@@ -35,9 +49,15 @@ namespace ArcWallet
                     await App.Database.UpdateBudget(new Budget
                 {
                     ID = 1,
-                    Amount = float.Parse(BudgetEntry.Text),
+                    Type = budgetType,
+                    Date = DateTime.Now.ToString(),
+                    Amount = float.Parse(BudgetEntry.Text)
 
-                });
+                    });
+
+                    Console.WriteLine("Type:" + budgetType);
+                    Console.WriteLine("Date:" + DateTime.Now.ToString());
+                    Console.WriteLine("Amount:" + float.Parse(BudgetEntry.Text));
                 await Navigation.PushAsync(new TabbedMyAccount());
                 }
 

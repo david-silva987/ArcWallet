@@ -55,7 +55,18 @@ namespace ArcWallet
                  * Last 7 Days spent's amount + amount in form  is bigger than budget)
                  */
 
-                if (dateEntry.Date.Date > DateTime.Now.Date.AddDays(-7) && transactionPicker.SelectedItem.ToString().Equals("Dépense") && budget != 0 && spentLastWeek + float.Parse(AmoutEntry.Text) > budget)
+                bool typeBudget = await App.Database.GetTypeBudget();
+                float days;
+                if(typeBudget)
+                {
+                    days = -7;
+                }
+                else
+                {
+                    days = -30;
+                }
+
+                if (dateEntry.Date.Date > DateTime.Now.Date.AddDays(days) && transactionPicker.SelectedItem.ToString().Equals("Dépense") && budget != 0 && spentLastWeek + float.Parse(AmoutEntry.Text) > budget)
                 {
                     string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");
 
