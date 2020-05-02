@@ -131,6 +131,8 @@ namespace ArcWallet
                 Amount = float.Parse(AmoutEntry.Text),
 
             });
+
+            DependencyService.Get<IMessage>().LongAlert("Transaction ajoutée avec succès");
             await Navigation.PushAsync(new TabbedMyAccount());
         }
 

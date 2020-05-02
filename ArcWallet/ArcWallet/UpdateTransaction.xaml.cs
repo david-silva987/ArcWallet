@@ -84,6 +84,55 @@ namespace ArcWallet
         /// <param name="e"></param>
         async void updateTransactionButton(object sender, EventArgs e)
         {
+          
+
+            if(CheckFormValid())
+            {
+                float spentLastWeek = float.Parse(await App.Database.GetSpentLastXDays()); //return 0 if budget is not defined
+                float budget = await App.Database.GetBudget();
+
+                /*Check if:
+                 * transactionPicker' selected item is "Dépense"
+                 * Date of transaction is not before last 7 days
+                 * Budget is not equal to 0 (because 0 -> budget is not defined)
+                 * Last 7 Days spent's amount + amount in form  is bigger than budget)
+                 */
+
+                bool typeBudget = await App.Database.GetTypeBudget();
+                float days;
+                if (typeBudget)
+                {
+                    days = -7;
+                }
+                else
+                {
+                    days = -30;
+                }
+
+                if (dateEntry.Date.Date > DateTime.Now.Date.AddDays(days) && transactionPicker.SelectedItem.ToString().Equals("Dépense") && budget != 0 && spentLastWeek - transaction.Amount + float.Parse(AmoutEntry.Text) > budget)
+                {
+                    string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");
+
+                    if (BudgetCheck == "Oui")
+                    {
+                        UpdateTransactionToDB();
+                    }
+
+                }
+                else
+                {
+                    UpdateTransactionToDB();
+                }
+                
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide"); //form is not valid
+            }
+
+        }
+        private async void UpdateTransactionToDB()
+        {
             bool transactionType;
             string categorySelected;
 
@@ -98,29 +147,20 @@ namespace ArcWallet
                 categorySelected = "Revenu";
             }
 
-            if(CheckFormValid())
+            await App.Database.UpdateTransaction(new Transaction
             {
-                await App.Database.UpdateTransaction(new Transaction
-                {
-                    ID = transaction.ID, //since we update, use same ID as odl transaction
-                    Type = transactionType,
-                    Name = nameEntry.Text,
-                    Category = categorySelected,
-                    Date = dateEntry.Date.ToString(),
-                    Amount = float.Parse(AmoutEntry.Text),
+                ID = transaction.ID, //since we update, use same ID as old transaction
+                Type = transactionType,
+                Name = nameEntry.Text,
+                Category = categorySelected,
+                Date = dateEntry.Date.ToString(),
+                Amount = float.Parse(AmoutEntry.Text),
 
-                });
-                await Navigation.PushAsync(new TabbedMyAccount());
-             
-                DependencyService.Get<IMessage>().LongAlert("Transaction modifiée avec succès"); //success message
-            }
-            else
-            {
-                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide"); //form is not valid
-            }
+            });
+            DependencyService.Get<IMessage>().LongAlert("Transaction modifiée avec succès"); //success message
 
+            await Navigation.PushAsync(new TabbedMyAccount());
         }
-
         /// <summary>
         /// Check if all entries in form are valid
         /// </summary>
