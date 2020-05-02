@@ -10,6 +10,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class to set a budget weekly or monthly for user
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyBudget : ContentPage
     {
@@ -18,9 +21,15 @@ namespace ArcWallet
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Action onClick Button to add budget
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void addBudgetButton(object sender, EventArgs e)
         {
-            bool budgetType;
+            bool budgetType; //to match type on database
+            //check if form is valid
             if (CheckEntryValid())
             {
                 if (budgetPicker.SelectedItem.ToString().Equals("Hebdomadaire"))
@@ -46,6 +55,7 @@ namespace ArcWallet
                 }
                 else
                 {
+                    //if we update, since we have only 1 row in table, use ID=1 to update that row
                     await App.Database.UpdateBudget(new Budget
                 {
                     ID = 1,
@@ -55,6 +65,7 @@ namespace ArcWallet
 
                     });
 
+                    //a few debugs
                     Console.WriteLine("Type:" + budgetType);
                     Console.WriteLine("Date:" + DateTime.Now.ToString());
                     Console.WriteLine("Amount:" + float.Parse(BudgetEntry.Text));
@@ -64,11 +75,15 @@ namespace ArcWallet
             }
             else
             {
-                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide");
+                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide"); //form is not valid
             }
             
         }
 
+        /// <summary>
+        /// Check if form is valid while checking if a Budget was set
+        /// </summary>
+        /// <returns></returns>
         private bool CheckEntryValid()
         {
             return !string.IsNullOrEmpty(BudgetEntry.Text) && BudgetEntry.Text != "." && !BudgetEntry.Text.Contains("-");

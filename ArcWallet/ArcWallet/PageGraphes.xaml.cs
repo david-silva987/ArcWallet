@@ -8,6 +8,10 @@ using Xamarin.Forms.Xaml;
 using Entry = Microcharts.Entry;
 namespace ArcWallet
 {
+
+    /// <summary>
+    /// Class to display Graph using Microcharts, second tab in tabbed page
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageGraphes : ContentPage
     {
@@ -15,20 +19,22 @@ namespace ArcWallet
         
         public PageGraphes()
         {
-
-            InitializeComponent();
-
-            
+            InitializeComponent();            
         }
+
+        /// <summary>
+        /// Method called when page is active to user
+        /// </summary>
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            // listView.ItemsSource = await App.Database.GetExpenditureAsync();
+            //get total spending and receiving
             totalSpentBinding.Text = await App.Database.GetAmountExpenditures();
             totalReceivedBinding.Text = await App.Database.GetAmountRevenues();
 
 
+            //display some informations and hide another depending on amount received/spent
             if(float.Parse(totalReceivedBinding.Text) >0 || float.Parse(totalSpentBinding.Text) >0)
             {
                 Chart1.IsVisible = true;
@@ -36,12 +42,12 @@ namespace ArcWallet
             }
             else
             {
-
-                    Chart1.IsVisible = false;
-                    labelNoActivity.IsVisible = true;
+                Chart1.IsVisible = false;
+                labelNoActivity.IsVisible = true;
                 
             }
 
+            //List of Entry, used to display Microchart
             List<Entry> entries = new List<Entry>()
             {
                 new Entry(float.Parse(totalSpentBinding.Text))
@@ -58,6 +64,7 @@ namespace ArcWallet
                 }
             };
 
+            //Creation of Microcharts Donut Chart using entries given
             Chart1.Chart = new Microcharts.DonutChart { Entries = entries };
             Chart1.Chart.LabelTextSize = 30;
             

@@ -8,8 +8,9 @@ using Xamarin.Forms;
 
 namespace ArcWallet
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+    /// <summary>
+    /// Navbar class
+    /// </summary>
     [DesignTimeVisible(false)]
     public partial class MainPage : MasterDetailPage
     {
@@ -23,6 +24,7 @@ namespace ArcWallet
 
             menuList = new List<MainMenuItem>();
 
+            //list of all pages in the navbar
             var pageMyAccount = new MainMenuItem() { Title = "Mon compte", Icon = "wallet.png", TargetType = typeof(TabbedMyAccount) };
             var pageMyBudget = new MainMenuItem() { Title = "Définir mon budget", Icon = "budget.png", TargetType = typeof(MyBudget) };
             var pageAbout = new MainMenuItem() { Title = "A Propos", Icon = "info.png", TargetType = typeof(About) };
@@ -39,6 +41,11 @@ namespace ArcWallet
 
         }
 
+        /// <summary>
+        /// Change page if a page is clicked in the sidebar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 

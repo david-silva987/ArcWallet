@@ -4,6 +4,9 @@ using System.Text;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class used to the nav side bar menu
+    /// </summary>
     public class MainMenuItem
     {
         public string Title { get; set; }

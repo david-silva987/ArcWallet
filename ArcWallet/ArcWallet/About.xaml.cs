@@ -9,6 +9,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class About
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class About : ContentPage
     {

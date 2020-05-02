@@ -6,6 +6,9 @@ using SQLite;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Database interaction with application
+    /// </summary>
     public class Database
     {
         readonly SQLiteAsyncConnection _database;
@@ -17,19 +20,25 @@ namespace ArcWallet
             _database.CreateTableAsync<Budget>().Wait();
         }
 
-        //Get all transactions
+        /// <summary>
+        /// Get all transactions in database
+        /// </summary>
+        /// <returns></returns>
         public Task<List<Transaction>> GetAllTransactions()
         {
             return _database.Table<Transaction>().OrderByDescending(x => x.ID).ToListAsync();
         }
 
-        //Get amout of all expenditures
+        /// <summary>
+        /// Get Money spent using SUM condition
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetAmountExpenditures()
         {
             var nbSpent = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = False");
             float spent = 0;
 
-            if (nbSpent.Count>0)
+            if (nbSpent.Count>0) //check if there's at least one entry
             {
                 spent = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Type = False");
 
@@ -37,20 +46,26 @@ namespace ArcWallet
             return spent.ToString();
         }
 
-        //Get amount of all revenues
+        /// <summary>
+        /// Get Money received using SUM condition
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetAmountRevenues()
         {
             var nbRevenu = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = True");
             float revenu = 0;
 
-            if (nbRevenu.Count > 0)
+            if (nbRevenu.Count > 0) //check if there's at least one entry
             {
                 revenu = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Type = True");
             }
             return revenu.ToString();
         }
 
-        //Get Amount of difference between all expenditures and all revenues
+        /// <summary>
+        /// Get total balance (difference betweent money received and money spent) using SUM condition
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetBalance()
         {
             var nbSpent = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Type = False");
@@ -59,12 +74,12 @@ namespace ArcWallet
             float spent=0;
             float revenu = 0;
 
-            if (nbSpent.Count > 0)
+            if (nbSpent.Count > 0) //check if there's at least one entry
             {
                 spent = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Transaction' WHERE Type = False");
             }
 
-            if (nbRevenu.Count > 0)
+            if (nbRevenu.Count > 0) //check if there's at least one entry
             {
                 revenu = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Transaction' WHERE Type = True");
             }
@@ -72,14 +87,17 @@ namespace ArcWallet
             float balance = revenu - spent;
             return balance.ToString();
         }
-
-        //Get Budget
+        
+        /// <summary>
+        /// Get budget of user
+        /// </summary>
+        /// <returns></returns>
         public async Task<float> GetBudget()
         {
             float budget = 0;
             var nbBudget = await _database.QueryAsync<Budget>("SELECT * FROM 'Budget'");
 
-            if(nbBudget.Count > 0)
+            if(nbBudget.Count > 0) //check if there's at least one entry
             {
                 budget = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) FROM 'Budget'");
             }
@@ -87,53 +105,66 @@ namespace ArcWallet
             return budget;
         }
 
-        //Get the biggest expenditure
+        /// <summary>
+        /// Get Biggest expenditure from user, using MAX condition 
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Transaction>> GetBiggestExpenditure()
         { 
 
             return await _database.QueryAsync<Transaction>("SELECT Name,Category,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = False GROUP BY Name ORDER BY Amount DESC LIMIT 1;");
         }
 
-        //Get the biggest expenditure
+        /// <summary>
+        /// Get biggest Revenue, using MAX condition
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Transaction>> GetBiggestRevenue()
         {
             return await _database.QueryAsync<Transaction>("SELECT Name,Category,MAX(Amount) as Amount FROM 'Transaction' WHERE Type = True GROUP BY Name ORDER BY Amount DESC LIMIT 1;");
         }
 
-        //Get spent by catergory
+        /// <summary>
+        /// Get spent by category, using SUM and GROUP BY condition
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Transaction>> GetSpentByCategory()
         {
             return await _database.QueryAsync<Transaction>("SELECT Category,SUM(Amount) as Amount , count(*) as Name FROM 'Transaction' WHERE Type = False GROUP BY Category ORDER BY Amount DESC;");
         }
 
-        //Get expenditure's amount of last 7 days
+        /// <summary>
+        /// Get amount spent in last seven days
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetSpentLastSevenDays()
         {
             var nbAmount = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-7 day')) and Type = False");
             var nbBudget = await _database.QueryAsync<Budget>("SELECT * FROM 'Budget'");
-            float amount = 0;
+            float amount = 0; //default value to prevent app from crashing
             bool typeBudget = true;
             string dateBudget = "";
 
        
 
 
-            if (nbBudget.Count > 0 && nbAmount.Count>0)
+            if (nbBudget.Count > 0 && nbAmount.Count>0) //check if there's at least one entry
             {
                 typeBudget = await _database.ExecuteScalarAsync<bool>("SELECT Type FROM 'Budget'");
                 dateBudget = await _database.ExecuteScalarAsync<string>("SELECT Date FROM 'Budget'");
 
+                //debug some informations
                 System.Console.WriteLine("typeBudget:" + typeBudget);
                 System.Console.WriteLine("dateBudget:" + dateBudget);
                 System.Console.WriteLine("**************************************************" );
 
 
-                if (typeBudget)
+                if (typeBudget) //if its weekly
                 {
                     amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-7 day')) and Type = False");
                     System.Console.WriteLine("7days: " + amount);
                 }
-                else
+                else //its monhly
                 {
                     amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-30 day')) and Type = False");
                     System.Console.WriteLine("30days: " + amount);
@@ -145,13 +176,16 @@ namespace ArcWallet
             return amount.ToString();
         }
 
-        //Get type of Budget
+        /// <summary>
+        /// Check if we have weekly/monthly budget
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> GetTypeBudget()
         {
             var nbBudget = await _database.QueryAsync<Budget>("SELECT * FROM 'Budget'");
             bool typeBudget=true;
 
-            if (nbBudget.Count > 0)
+            if (nbBudget.Count > 0) //check if there's at least one entry
             {
                 typeBudget = await _database.ExecuteScalarAsync<bool>("SELECT Type FROM 'Budget'");
             }
@@ -160,32 +194,52 @@ namespace ArcWallet
             return typeBudget;
         }
 
-        //Add budget to DB
+        /// <summary>
+        /// Add Budget to database
+        /// </summary>
+        /// <param name="budget"> the row to be entered in database</param>
+        /// <returns></returns>
         public Task<int> SaveBudgetAsync(Budget budget)
         {
             return _database.InsertAsync(budget);
         }
 
-        //Add a transaction to DB
+        /// <summary>
+        /// Add transaction do database
+        /// </summary>
+        /// <param name="transaction"> the row to be entered in database</param>
+        /// <returns></returns>
         public Task<int> SaveTransactionAsycn(Transaction transaction)
         {
             return _database.InsertAsync(transaction);
         }
 
-        //Delete a transaction from DB 
+        /// <summary>
+        /// Remove transaction do database
+        /// </summary>
+        /// <param name="id"> the id of the row to be deleted in database</param>
+        /// <returns></returns>
         public Task<string> RemoveTransaction(int id)
         {
             return _database.ExecuteScalarAsync<string>("DELETE FROM 'Transaction' WHERE id =" + id);
 
         }
 
-        //Update a transaction in DB 
+        /// <summary>
+        /// Update transaction on database
+        /// </summary>
+        /// <param name="transaction">The transaction to be updated</param>
+        /// <returns></returns>
         public Task<int> UpdateTransaction(Transaction transaction)
         {
             return _database.UpdateAsync(transaction);
         }
 
-        //Update a budget in DB
+        /// <summary>
+        /// Update budget in database
+        /// </summary>
+        /// <param name="budget">Budget to be updated in database</param>
+        /// <returns></returns>
         public Task<int> UpdateBudget(Budget budget)
         {
             return _database.UpdateAsync(budget);

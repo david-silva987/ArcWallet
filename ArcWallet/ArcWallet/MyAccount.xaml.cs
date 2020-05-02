@@ -10,6 +10,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class MyAccount, the first one to be displayed
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAccount : ContentPage
     {
@@ -19,20 +22,29 @@ namespace ArcWallet
         }
 
 
+        /// <summary>
+        /// Action OnClick to add a transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void addMouvementButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddTransaction());
 
         }
 
+        /// <summary>
+        /// Method called when page is active to user
+        /// </summary>
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listViewTransactions.ItemsSource = await App.Database.GetAllTransactions();
+            listViewTransactions.ItemsSource = await App.Database.GetAllTransactions(); //interaction with db to get all conection
             balanceLabel.Text = await App.Database.GetBalance() + " CHF";
 
             bool typeBudget = await App.Database.GetTypeBudget();
 
+            //design text while checking what kind of budget we have
             if(typeBudget)
             {
                 budgetTitlelbl.Text = "Budget Hebdomadaire";
@@ -42,6 +54,7 @@ namespace ArcWallet
                 budgetTitlelbl.Text = "Budget Mensuel";
             }
 
+            //if it's empty, custom messages are displayed
             if((listViewTransactions.ItemsSource as List<Transaction>).Count ==0)
             {
                 listViewTransactions.IsVisible = false;
@@ -53,27 +66,24 @@ namespace ArcWallet
             if(await App.Database.GetBudget() != 0.0)
             {
                 budgetLabel.Text = await App.Database.GetBudget() + " CHF";
-                //budgetLabel.Text = await App.Database.GetSpentLastWeek() + "";
             }
             else
             {
                 budgetLabel.Text = "Pas de budget";
             }
 
-            // listViewDepense.ItemsSource = await App.Database.GetBiggestDepenseAsync();
-            // totalRevenus.Text = await App.Database.GetAllRevenus();
-            //  totalExpenditures.Text = await App.Database.dsadsaAsync();
-
-            /*float totRevenus = float.Parse(totalRevenus.Text);
-            float totDepenses = float.Parse(totalExpenditures.Text);
-            float solde = totRevenus - totDepenses;
-            balanceLabel.Text = solde.ToString();*/
-
         }
 
+
+        /// <summary>
+        /// Called when User clicks on a transaction in the list view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Item clicked</param>
         private async void ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
+           
             string UpdateOrDelete = await DisplayActionSheet ("Que souhaitez-vous faire?", "Modifier", "Supprimer");
             var content = e.Item as Transaction;
 

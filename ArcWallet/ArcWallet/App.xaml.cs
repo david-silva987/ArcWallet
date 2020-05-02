@@ -8,6 +8,9 @@ namespace ArcWallet
     {
         static Database database;
 
+        /// <summary>
+        /// Create database
+        /// </summary>
         public static Database Database
         {
             get

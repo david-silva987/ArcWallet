@@ -2,6 +2,9 @@
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Transaction table in database
+    /// </summary>
     public class Transaction
     {
         [PrimaryKey, AutoIncrement]

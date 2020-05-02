@@ -9,6 +9,10 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+
+    /// <summary>
+    /// Class to display some user stats
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageStatistiques : ContentPage
     {
@@ -16,32 +20,39 @@ namespace ArcWallet
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Method called when page is active to user
+        /// </summary>
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            //  listView.ItemsSource = await App.Database.GetRevenueAsync();
+
+            //stat biggest expenditure
             listViewBiggestDepense.ItemsSource = await App.Database.GetBiggestExpenditure();
             List<Transaction> list = listViewBiggestDepense.ItemsSource as List<Transaction>;
-            Console.WriteLine(list.Count);
+            //check if information is available, if not => custom message
             if ((listViewBiggestDepense.ItemsSource as List<Transaction>).Count == 0)
             {
                 listViewBiggestDepense.IsVisible = false;
                 labelNoBiggestDepense.IsVisible = true;
             }
 
-
+            //stat biggest receiving
             listViewBiggestRevenu.ItemsSource = await App.Database.GetBiggestRevenue();
             List<Transaction> list2 = listViewBiggestRevenu.ItemsSource as List<Transaction>;
-            Console.WriteLine(list2.Count);
+            //check if information is available, if not => custom message
             if ((listViewBiggestRevenu.ItemsSource as List<Transaction>).Count == 0)
             {
                 listViewBiggestRevenu.IsVisible = false;
                
                 labelNoBiggestRevenu.IsVisible = true;
             }
+
+            //stat spentbyCategory
             listViewSpentByCategory.ItemsSource = await App.Database.GetSpentByCategory();
             List<Transaction> list3 = listViewSpentByCategory.ItemsSource as List<Transaction>;
-            Console.WriteLine(list3.Count);
+            //check if information is available, if not => custom message
             if ((listViewSpentByCategory.ItemsSource as List<Transaction>).Count == 0)
             {
                 listViewSpentByCategory.IsVisible = false;

@@ -11,6 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class AddTransaction, to let user add any kind of transactions
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddTransaction : ContentPage
     {
@@ -23,6 +26,11 @@ namespace ArcWallet
             categoryPicker.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Check in runtime which type of transaction is selected, so some informations are shown or hiden
+        /// </summary>
+        /// <param name="sender">The picker</param>
+        /// <param name="e"></param>
         public void transactionType_SelectedIndexChanged(object sender, EventArgs e)
         {
             var picker = sender as Picker;
@@ -41,6 +49,12 @@ namespace ArcWallet
             }
         }
 
+        /// <summary>
+        /// OnClick action when button is clicked.
+        /// Lets user add a transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void addTransactionButton(object sender, EventArgs e)
         {
             //If form is valid
@@ -66,6 +80,7 @@ namespace ArcWallet
                     days = -30;
                 }
 
+
                 if (dateEntry.Date.Date > DateTime.Now.Date.AddDays(days) && transactionPicker.SelectedItem.ToString().Equals("Dépense") && budget != 0 && spentLastWeek + float.Parse(AmoutEntry.Text) > budget)
                 {
                     string BudgetCheck = await DisplayActionSheet("Budget dépassé. Souhaitez-vous tout de même poursuivre la transaction?", "Oui", "Non");
@@ -88,7 +103,9 @@ namespace ArcWallet
             }
         }
 
-        //Add transaction to DB
+        /// <summary>
+        /// Add Transaction to database
+        /// </summary>
         private async void AddTransactionToDB()
         {
             bool transactionType;
@@ -117,7 +134,11 @@ namespace ArcWallet
             await Navigation.PushAsync(new TabbedMyAccount());
         }
 
-        //Check if form's entrys are valid
+        /// <summary>
+        /// Check if form is valid
+        /// Summary of all the validations done
+        /// </summary>
+        /// <returns></returns>
         private bool CheckFormValid()
         {
             if (transactionPicker.SelectedItem.ToString().Equals("Dépense"))
@@ -130,16 +151,28 @@ namespace ArcWallet
             }
         }
 
+        /// <summary>
+        /// Check if Name entered isn't null or empty
+        /// </summary>
+        /// <returns></returns>
         private bool CheckName()
         {
             return !string.IsNullOrEmpty(nameEntry.Text);
         }
 
+        /// <summary>
+        /// Check if a category is chosen
+        /// </summary>
+        /// <returns></returns>
         private bool CheckCategory()
         {
             return !string.IsNullOrEmpty(categoryPicker.SelectedItem.ToString());
         }
 
+        /// <summary>
+        /// Check if Amount is not null or empty and it's a number
+        /// </summary>
+        /// <returns></returns>
         private bool CheckAmount()
         {
             return !string.IsNullOrEmpty(AmoutEntry.Text) && AmoutEntry.Text != "." && !AmoutEntry.Text.Contains("-");

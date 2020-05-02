@@ -11,6 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Class to update a transaction after clicking on it in listView
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UpdateTransaction : ContentPage
     {
@@ -25,6 +28,11 @@ namespace ArcWallet
             categoryPicker.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Check in runtime which type of transaction is selected, so some informations are shown or hiden
+        /// </summary>
+        /// <param name="sender">The picker</param>
+        /// <param name="e"></param>
         public void transactionType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -42,6 +50,10 @@ namespace ArcWallet
             }
         }
 
+        /// <summary>
+        /// Method that updates a transaction
+        /// </summary>
+        /// <param name="oldTransaction">Old transaction, the one which was clicked in listView</param>
         public UpdateTransaction(Transaction oldTransaction)
         {
             this.transaction = oldTransaction;
@@ -65,6 +77,11 @@ namespace ArcWallet
             AmoutEntry.Text = oldTransaction.Amount.ToString();
         }
 
+        /// <summary>
+        /// Action onClick button to update a transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void updateTransactionButton(object sender, EventArgs e)
         {
             bool transactionType;
@@ -85,7 +102,7 @@ namespace ArcWallet
             {
                 await App.Database.UpdateTransaction(new Transaction
                 {
-                    ID = transaction.ID,
+                    ID = transaction.ID, //since we update, use same ID as odl transaction
                     Type = transactionType,
                     Name = nameEntry.Text,
                     Category = categorySelected,
@@ -95,39 +112,55 @@ namespace ArcWallet
                 });
                 await Navigation.PushAsync(new TabbedMyAccount());
              
-                DependencyService.Get<IMessage>().LongAlert("Transaction modifiée avec succès");
+                DependencyService.Get<IMessage>().LongAlert("Transaction modifiée avec succès"); //success message
             }
             else
             {
                 Console.WriteLine("Pas Ok");
-                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide");
+                DependencyService.Get<IMessage>().ShortAlert("Entrée non valide"); //form is not valid
             }
 
         }
 
+        /// <summary>
+        /// Check if all entries in form are valid
+        /// </summary>
+        /// <returns></returns>
         private bool CheckFormValid()
         {
-            if (transactionPicker.SelectedItem.ToString().Equals("Dépense"))
+            if (transactionPicker.SelectedItem.ToString().Equals("Dépense")) //if transaction is an expenditure
             {
                 return CheckName() && CheckCategory() && CheckAmount();
             }
             else
             {
-                return CheckName() && CheckAmount();
+                return CheckName() && CheckAmount(); //if it's a receiving
             }
 
         }
 
+        /// <summary>
+        /// Check if name is not null or empty
+        /// </summary>
+        /// <returns></returns>
         private bool CheckName()
         {
             return !string.IsNullOrEmpty(nameEntry.Text);
         }
 
+        /// <summary>
+        /// Checki if a category is chosen in picker
+        /// </summary>
+        /// <returns></returns>
         private bool CheckCategory()
         {
             return !string.IsNullOrEmpty(categoryPicker.SelectedItem.ToString());
         }
 
+        /// <summary>
+        /// Check if amount is given and it's a number
+        /// </summary>
+        /// <returns></returns>
         private bool CheckAmount()
         {
             return !string.IsNullOrEmpty(AmoutEntry.Text) && AmoutEntry.Text != "." && !AmoutEntry.Text.Contains("-");

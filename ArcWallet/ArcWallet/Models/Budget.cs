@@ -2,6 +2,9 @@
 
 namespace ArcWallet
 {
+     /// <summary>
+     /// My Budget Table in database
+     /// </summary>
     public class Budget
     {
         [PrimaryKey, AutoIncrement]

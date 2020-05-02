@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 /**
- * Génération de toasts avec Xamarin Interface IMessage
+ * Toasts generation using Xamarin
  * https://stackoverflow.com/questions/35279403/toast-equivalent-for-xamarin-forms
  */
 
