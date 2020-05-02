@@ -6,6 +6,9 @@ using Xamarin.Forms;
 
 namespace ArcWallet
 {
+    /// <summary>
+    /// Displays the correct image in relation to selected category in xaml
+    /// </summary>
     class ImageNameConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -60,7 +60,7 @@ namespace ArcWallet
             //If form is valid
             if (CheckFormValid())
             {
-                float spentLastWeek = float.Parse(await App.Database.GetSpentLastSevenDays()); //return 0 if budget is not defined
+                float spentLastWeek = float.Parse(await App.Database.GetSpentLastXDays()); //return 0 if budget is not defined
                 float budget = await App.Database.GetBudget();
                 /*Check if:
                  * transactionPicker' selected item is "Dépense"

@@ -63,7 +63,7 @@ namespace ArcWallet
         }
 
         /// <summary>
-        /// Get total balance (difference betweent money received and money spent) using SUM condition
+        /// Get total balance (difference between money received and money spent) using SUM condition
         /// </summary>
         /// <returns></returns>
         public async Task<string> GetBalance()
@@ -137,42 +137,28 @@ namespace ArcWallet
         /// Get amount spent in last seven days
         /// </summary>
         /// <returns></returns>
-        public async Task<string> GetSpentLastSevenDays()
+        public async Task<string> GetSpentLastXDays()
         {
             var nbAmount = await _database.QueryAsync<Transaction>("SELECT * FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-7 day')) and Type = False");
             var nbBudget = await _database.QueryAsync<Budget>("SELECT * FROM 'Budget'");
             float amount = 0; //default value to prevent app from crashing
             bool typeBudget = true;
-            string dateBudget = "";
-
-       
 
 
             if (nbBudget.Count > 0 && nbAmount.Count>0) //check if there's at least one entry
             {
                 typeBudget = await _database.ExecuteScalarAsync<bool>("SELECT Type FROM 'Budget'");
-                dateBudget = await _database.ExecuteScalarAsync<string>("SELECT Date FROM 'Budget'");
 
-                //debug some informations
-                System.Console.WriteLine("typeBudget:" + typeBudget);
-                System.Console.WriteLine("dateBudget:" + dateBudget);
-                System.Console.WriteLine("**************************************************" );
-
-
-                if (typeBudget) //if its weekly
+                if (typeBudget) //if it's weekly
                 {
                     amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-7 day')) and Type = False");
-                    System.Console.WriteLine("7days: " + amount);
                 }
-                else //its monhly
+                else //it's monhly
                 {
                     amount = await _database.ExecuteScalarAsync<float>("SELECT SUM(Amount) as Amount FROM 'Transaction' WHERE Date > (SELECT DATE('now', '-30 day')) and Type = False");
-                    System.Console.WriteLine("30days: " + amount);
                 }
             }
 
-
-   
             return amount.ToString();
         }
 
@@ -189,7 +175,6 @@ namespace ArcWallet
             {
                 typeBudget = await _database.ExecuteScalarAsync<bool>("SELECT Type FROM 'Budget'");
             }
-
         
             return typeBudget;
         }
@@ -205,7 +190,7 @@ namespace ArcWallet
         }
 
         /// <summary>
-        /// Add transaction do database
+        /// Add transaction to database
         /// </summary>
         /// <param name="transaction"> the row to be entered in database</param>
         /// <returns></returns>
@@ -215,7 +200,7 @@ namespace ArcWallet
         }
 
         /// <summary>
-        /// Remove transaction do database
+        /// Delete transaction to database
         /// </summary>
         /// <param name="id"> the id of the row to be deleted in database</param>
         /// <returns></returns>
@@ -226,7 +211,7 @@ namespace ArcWallet
         }
 
         /// <summary>
-        /// Update transaction on database
+        /// Update transaction in database
         /// </summary>
         /// <param name="transaction">The transaction to be updated</param>
         /// <returns></returns>

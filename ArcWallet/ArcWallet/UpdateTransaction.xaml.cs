@@ -116,7 +116,6 @@ namespace ArcWallet
             }
             else
             {
-                Console.WriteLine("Pas Ok");
                 DependencyService.Get<IMessage>().ShortAlert("Entrée non valide"); //form is not valid
             }
 

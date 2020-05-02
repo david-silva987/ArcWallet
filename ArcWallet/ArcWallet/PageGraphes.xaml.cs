@@ -16,7 +16,6 @@ namespace ArcWallet
     public partial class PageGraphes : ContentPage
     {
 
-        
         public PageGraphes()
         {
             InitializeComponent();            

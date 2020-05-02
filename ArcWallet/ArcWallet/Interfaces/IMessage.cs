@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-/**
- * Toasts generation using Xamarin
- * https://stackoverflow.com/questions/35279403/toast-equivalent-for-xamarin-forms
- */
+/// <summary>
+/// Toasts generation using Xamarin
+/// https://stackoverflow.com/questions/35279403/toast-equivalent-for-xamarin-forms
+/// </summary>
 
 namespace ArcWallet.Interfaces
 {
