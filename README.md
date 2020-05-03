@@ -27,3 +27,5 @@ Les données seront sauvegardées dans une base de données.
 * Graphe permettant d'avoir un résumé dépense/revenu
 * Dépenses permanentes (style ordre permanent à la banque)
 * Notifications en arrière-plan
+
+Les icônes ont été prises sur : https://www.flaticon.com/
