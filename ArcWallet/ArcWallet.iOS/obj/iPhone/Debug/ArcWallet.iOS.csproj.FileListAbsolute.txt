@@ -136,3 +136,5 @@ C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.Forms.d
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.dll
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.Views.iOS.dll
 C:\dotNet\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\SkiaSharp.Views.Forms.dll
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.dll
+C:\HEARC3\C#\xamarin\ArcWallet\ArcWallet\ArcWallet.iOS\bin\iPhone\Debug\Microcharts.iOS.dll
