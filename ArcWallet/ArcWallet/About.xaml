@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.About">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="A propos" FontSize="Title" TextColor="#000000" HorizontalOptions="Center"  />
+            <Label Margin="5,50,5,1" Text="Application simulant un porte-monnaie virtuel avec un suivi des revenus/dépenses réalisé dans le cadre du cours de .Net." />
+            <Label Margin="5,1,5,1" Text="Réalisé par David da Silva, Robin Alfred, Sébastien Peiris" />
+            <Label Margin="5,1,5,1" Text="Classe: INF3dlm-b" />
+            <Label Margin="5,1,5,1" Text="Professeur: Olivier Hüsser" />
+            <Label Margin="5,1,5,1" Text="Année: 2020" />
+            <Image Source="logo_arc.png" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

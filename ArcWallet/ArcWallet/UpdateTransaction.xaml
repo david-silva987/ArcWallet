@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.UpdateTransaction"     
+             Title="Modifier un mouvement">
+
+    <StackLayout Margin="20,35,20,20">
+
+        <Label x:Name="labelMouvementEntry">Type de mouvement</Label>
+        <Picker SelectedIndexChanged="transactionType_SelectedIndexChanged" x:Name="transactionPicker" 
+                    Title="Selectionner le type de mouvement" 
+                    TitleColor="green">
+            <Picker.Items>
+                <x:String>Dépense</x:String>
+                <x:String>Revenu</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label>Nom</Label>
+        <Entry x:Name="nameEntry"
+               Placeholder="Saisissez le nom" />
+
+        <Label x:Name="categoryLabel" IsVisible="False">Catégorie</Label>
+        <Picker IsVisible="False" x:Name="categoryPicker" 
+                    Title="Selectionner une catégorie" 
+                    TitleColor="green">
+            <Picker.Items>
+                <x:String>Courses</x:String>
+                <x:String>Restaurants</x:String>
+                <x:String>Divertissement</x:String>
+                <x:String>Transport</x:String>
+                <x:String>Santé</x:String>
+                <x:String>Voyage</x:String>
+                <x:String>Autre</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label>Date</Label>
+        <DatePicker x:Name="dateEntry"/>
+
+        <Label>Montant</Label>
+        <Entry Keyboard="Numeric" x:Name="AmoutEntry"
+               Placeholder="Le montant du revenu" />
+
+        <Button Text="Modifier le mouvement"
+                Clicked="updateTransactionButton" />
+
+
+
+    </StackLayout>
+</ContentPage>

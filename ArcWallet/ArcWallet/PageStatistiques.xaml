@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:ArcWallet"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.PageStatistiques" Title="STATISTIQUES">
+    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageNameConverter x:Key="ImageNameConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="0,0,0,20">
+            <Label Text="Dépense par catégorie" TextColor="#000000" FontSize="20" />
+            <Label x:Name="labelNoTransactionsSpentByCategory" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="StartAndExpand" Margin="0,0,0,15"></Label>
+
+            <ListView x:Name="listViewSpentByCategory" SeparatorVisibility="Default" SeparatorColor="Silver" HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                        Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
+
+
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding Category}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="{Binding Name}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+                                        <Label Text="transaction(s) effectuée(s)"
+                                HorizontalOptions="Center"
+                                TextColor="#000000" />
+                                    </StackLayout>
+                                    </StackLayout>
+
+
+                                    <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#000000" />
+
+                                    <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#000000" />
+                                    
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Label Text="Plus grosse dépense" TextColor="Red" FontSize="20" />
+            <Label x:Name="labelNoBiggestDepense" IsVisible="False" Text="Aucune dépense effectuée jusqu'à maintenant..." FontSize="20" HorizontalOptions="StartAndExpand" Margin="0,0,0,15"></Label>
+
+            <ListView x:Name="listViewBiggestDepense" HeightRequest="45">
+
+                <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                            <StackLayout
+                        Orientation="Vertical" >
+                                <StackLayout Orientation="Horizontal" BackgroundColor="LightCoral">
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
+
+                                    <Label Text="{Binding Name}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+
+                                    <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#000000" />
+
+                                    <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#000000" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+            </ListView>
+            <Label Text="Plus gros revenu" TextColor="Green" FontSize="20" />
+            <Label x:Name="labelNoBiggestRevenu" IsVisible="False" Text="Aucun revenu à relever jusqu'à maintenant..." FontSize="20" HorizontalOptions="Start" Margin="0,0,0,15"></Label>
+
+            <ListView x:Name="listViewBiggestRevenu" HeightRequest="45">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                        Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
+                                    <Image Source="{Binding Category, Converter={StaticResource ImageNameConverter}, ConverterParameter=mystring.png} "
+                                           Aspect="AspectFill"
+                                           WidthRequest="35"
+                                           HeightRequest="35"
+                                           Margin="5,5,5,5"/>
+                                    
+
+                                    <Label Text="{Binding Name}"
+                                HorizontalOptions="Start"
+                                TextColor="#000000" />
+
+                                    <Label Text="{Binding Amount}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#000000" />
+
+                                    <Label Text="CHF"
+                                HorizontalOptions="End"
+                                TextColor="#000000" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+           
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

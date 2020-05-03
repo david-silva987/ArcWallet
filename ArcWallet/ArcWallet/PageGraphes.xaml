@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms;assembly=Microcharts.Forms"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.PageGraphes" Title="GRAPHE">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Graphiques revenus/dépenses" HorizontalOptions="Center" TextColor="#000000" FontSize="20" />
+                
+            <forms:ChartView IsVisible="False" x:Name="Chart1" Margin="0,20,0,0" HeightRequest="250"/>
+            <Label x:Name="labelNoActivity" FontSize="25" HorizontalOptions="Center" Text="Faites bouger votre porte monnaie pour voir les graphes affichés"></Label>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="totalSpent" Margin="10,153,0,0" FontSize="20" Text="Total des dépenses"></Label>
+                    <Label x:Name="totalSpentBinding"  Margin="10,150,0,0" HorizontalOptions="Center" FontSize="25" Text="{Binding Amount}"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,150,0,0"  FontSize="25" Text="CHF"></Label>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="totalReceived" Margin="10,3,0,0" FontSize="20" Text="Total des revenus"></Label>
+                    <Label x:Name="totalReceivedBinding" Margin="25,0,0,0" HorizontalOptions="Center"  FontSize="25" Text="{Binding Amount}"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,0,0,0" FontSize="25" Text="CHF"></Label>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

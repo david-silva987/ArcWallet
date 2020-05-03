@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArcWallet.MyBudget" Title="Définir un budget">
+
+    <ContentPage.Content>
+      <StackLayout>
+            <Label Text="Définissez votre budget" FontSize="Title" TextColor="#000000" HorizontalOptions="CenterAndExpand" />
+            <Image Source="Budget2.png"  HeightRequest="200" Margin="0,20,0,0" HorizontalOptions="Center"/>
+            <Picker Margin="50,10,50,10" x:Name="budgetPicker" 
+                    Title="Selectionner le type de budget">
+                <Picker.Items>
+                    <x:String>Hebdomadaire</x:String>
+                    <x:String>Mensuel</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Keyboard="Numeric" x:Name="BudgetEntry" Margin="50,10,50,10" VerticalOptions="CenterAndExpand" Placeholder="Exemple: 1000 CHF"/>
+            <Button Text="Valider le nouveau budget" Margin="10,10,10,10" VerticalOptions="CenterAndExpand" Clicked="addBudgetButton"
+                       />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

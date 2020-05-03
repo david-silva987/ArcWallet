@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcWallet.Android", "ArcWal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcWallet.iOS", "ArcWallet.iOS\ArcWallet.iOS.csproj", "{F95D9EB0-62E3-4703-B7C3-7F9FFD01D36D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcWallet", "ArcWallet\ArcWallet.csproj", "{8ACBCD66-9B6A-456A-8CA3-4B7C4806E087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArcWallet", "ArcWallet\ArcWallet.csproj", "{8ACBCD66-9B6A-456A-8CA3-4B7C4806E087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
